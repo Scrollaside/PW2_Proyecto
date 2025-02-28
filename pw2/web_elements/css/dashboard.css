@@ -33,8 +33,9 @@
 }
 
 .nav-link:hover {
-    background-color: #f0f0f0;
+    background-color: #570c43;
     /* Cambia el color de fondo al pasar el cursor sobre el enlace */
+    color: #f0f0f0;
     border-radius: 10px;
     /* Suaviza los bordes del cuadrado */
     font-weight: bold;

@@ -5,7 +5,7 @@
         height: 100vh;
         margin: 0;
         background-color: #3ea0ca; /* Color de fondo */
-        background-image: url('../../resources/Illustrations/Register.jpg');
+        background-image: url('../../resources/Illustrations/Register.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -37,7 +37,7 @@
 } 
 
 .register-container button {
-    background-color: #3498db; /* Color de fondo del botón */
+    background-color: #8f065a; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     border: none;
     border-radius: 4px;
@@ -45,7 +45,7 @@
 }
 
 .register-container button:hover {
-    background-color: #2980b9; /* Cambio de color al pasar el cursor sobre el botón */
+    background-color: #570c43 /* Cambio de color al pasar el cursor sobre el botón */
 }
 
 .error {

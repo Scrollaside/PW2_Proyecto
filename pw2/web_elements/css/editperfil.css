@@ -1,4 +1,14 @@
 /* Personalización de menú------------------------------------ */
+body {
+   
+
+     background-color: #080808;
+            background-image: url('../../resources/Illustrations/Register.jpg');
+            /* height: 500px; */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+}
 #companyname {
     font-family: sans-serif;
     /* Cambiar la fuente a sans-serif */
@@ -56,16 +66,18 @@
 #pfinfo {
     margin-left: 4%;
      /* Personalización del contenedor */
-     background-color: #E4AF9E;
+     background-color: rgba(255, 255, 255, 0.13);
      padding: 20px;
      /* Espaciado interno */
-     border: 1px solid #dee2e6;
+     border: 2px solid rgb(255, 255, 255);
      /* Borde */
      border-radius: 8px;
      /* Bordes redondeados */
      /* Alineación del texto */
      overflow: auto;
      /* Limpiar el float */
+     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+     backdrop-filter: blur(20px);
 }
 /*Personlaización de la foto de perfil*/
 #pfp {
@@ -118,6 +130,10 @@
     height: 40px; /* Altura del campo de entrada */
     /* Cambiar el color del borde de enfoque */
     outline: none; /* Quitar el borde de enfoque por defecto */
+    background-color: rgba(255, 255, 255, 0.13);
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+    backdrop-filter: blur(20px);
 }
 #inputs::placeholder {
     color: #D3BFFF; /* Color del marcador de posición */
@@ -132,12 +148,16 @@
     height: 100px; /* Altura del campo de entrada */
     font-size: 25px;
 
-    background-color: white; /* Cambiar el color de fondo del botón */
+    background-color: #8f065a;
     border-radius: 40px; /* Hacer los bordes del botón redondeados */
-    border-color: white; /* Cambiar el color del borde del botón */
-    color: #D3BFFF; /* Cambiar el color del texto del botón */
+    border: none;
+    color: #fff;
+    cursor: pointer;
 
     font-family: 'Roboto', sans-serif; /* Cambiar la fuente del texto del botón */
+}
+#guardaInfo:hover {
+    background-color: #570c43;
 }
 
 

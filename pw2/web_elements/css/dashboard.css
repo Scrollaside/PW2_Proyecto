@@ -33,18 +33,19 @@
 }
 
 .nav-link:hover {
-    background-color: #570c43;
+    background-color: #f0f0f0;
     /* Cambia el color de fondo al pasar el cursor sobre el enlace */
-    color: #f0f0f0;
+    color: #570c43;
     border-radius: 10px;
     /* Suaviza los bordes del cuadrado */
     font-weight: bold;
 }
-.nav-item img{
+
+.nav-item img {
     max-width: 80px;
     /* Tamaño máximo de la imagen */
-    max-height: 80px;       
-    /* Alinea la imagen a la izquierda */    
+    max-height: 80px;
+    /* Alinea la imagen a la izquierda */
     border-radius: 60%;
     /* Bordes redondeados */
 }
@@ -55,24 +56,36 @@
     border: none;
     border-radius: 20px;
     margin-bottom: 10px;
-    /* Quita el borde */   
-    background-color: #E4AF9E;
+    /* Quita el borde */
+    background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
 .card-body {
     margin-top: 10px;
-    padding-left: 20px;    
-    
-    font-size: 100%;  
+    padding-left: 20px;
+    font-size: 100%;
     letter-spacing: 1px;
-    font-weight:600;    
+    font-weight: 600;
     color: #f0f0f0;
 }
 
-.card img {   
+.card img {
     border-radius: 10px;
     width: 90%;
     height: 90%;
     display: block; /* Hace que la imagen sea un bloque para centrarla correctamente */
     margin: 15px auto 0; /* Centra la imagen horizontalmente */
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, Bold 700;
+    font-size: 24px;
+    display: grid;
+    flex-direction: column-reverse;
+    height: 100vh;
+    background-image: url('../../resources/Illustrations/color.jpg');
+    background-color: #d190ae; /* Color crema suave de fondo */
+    /* Incluye el ancho del borde en el tamaño total */
 }

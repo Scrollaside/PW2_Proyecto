@@ -1,5 +1,5 @@
- /* Personalización de menú------------------------------------ */
- #companyname {
+/* Personalización de menú------------------------------------ */
+#companyname {
     font-family: sans-serif;
     /* Cambiar la fuente a sans-serif */
     font-weight: bold;
@@ -47,7 +47,6 @@
     /* Bordes redondeados */
 }
 
-
 /* ------------------------------------------------------------ */
 .row {
     margin-top: 6%;
@@ -71,17 +70,18 @@
 #catP,
 #BotonPostear {
     font-weight: bold;
-    background-color: #E4AF9E;
+    background-color: rgba(255, 255, 255, 0.13);
     border-radius: 20px;
     padding: 10px;
     /* Agrega un poco de espacio entre el contenido y el borde */
     margin-bottom: 28px;
 }
+
 .checkbox-label {
     display: inline-block;
     padding: 5px 10px;
     border-radius: 20px;
-    background-color: #E4AF9E;
+    background-color: rgba(255, 255, 255, 0.13);
     color: white;
     cursor: pointer;
 }
@@ -116,7 +116,7 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: #E4AF9E;
+    background-color: rgba(255, 255, 255, 0.13);
     /* Cambia el color de fondo de las flechas */
 }
 
@@ -154,7 +154,6 @@
     /* Cambia el color del icono cuando el cursor está encima */
 }
 
-
 /* Info de autors */
 #autorInfo img {
     margin-right: 20px;
@@ -172,7 +171,7 @@
 }
 
 #addInfo {
-    background-color: #E4AF9E;
+    background-color: rgba(255, 255, 255, 0.13);
     /* Establece el color de fondo del texto */
     padding: 5px;
     /* Añade un espacio alrededor del texto */
@@ -185,7 +184,6 @@
     align-items: center;
     /* Centra verticalmente los elementos */
 }
-
 
 /* Comentarios */
 #comment {
@@ -211,8 +209,7 @@
     height: 200px;
     overflow-y: auto;
     /* Barra de desplazamiento vertical */
-
-    background-color: #E4AF9E;
+    background-color: rgba(255, 255, 255, 0.13);
     border-radius: 20px;
     padding: 10px;
     /* Agrega un poco de espacio entre el contenido y el borde */
@@ -245,7 +242,7 @@
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
-    background-color: #E4AF9E;
+    background-color: rgba(255, 255, 255, 0.13);
     color: #fff;
     border-radius: 20px;
 }
@@ -261,7 +258,7 @@
 /* Estilo para el botón de postear */
 .custom-file-upload {
     display: inline-block;
-    background-color: #E4AF9E;
+    background-color: rgba(255, 255, 255, 0.13);
     color: white;
     padding: 10px 20px;
     border-radius: 20px;
@@ -285,4 +282,16 @@
 /* Estilo para el contenedor de categorías */
 #catP {
     max-width: 250px;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, Bold 700;
+    font-size: 24px;
+    display: grid;
+    flex-direction: column-reverse;
+    height: 100vh;
+    background-image: url('../../resources/Illustrations/color2.png');
+    background-color: #d190ae; /* Color crema suave de fondo */
+    /* Incluye el ancho del borde en el tamaño total */
 }

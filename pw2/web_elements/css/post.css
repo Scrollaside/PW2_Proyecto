@@ -11,6 +11,7 @@
     margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
+    background-color: aquamarine;
 }
 
 #menuElements {
@@ -21,6 +22,7 @@
     font-size: 18px;
     letter-spacing: 1px;
 }
+
 
 /* Hovers */
 .nav-link {

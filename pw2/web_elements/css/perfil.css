@@ -31,10 +31,12 @@
     padding: 5px;
     /* Añade un espacio entre el texto y el borde */
     margin-right: 10px;
+    color: #f0f0f0;
 }
 
 .nav-link:hover {
-    background-color: #f0f0f0;
+    background-color: #570c43;
+    color: #f0f0f0;
     /* Cambia el color de fondo al pasar el cursor sobre el enlace */
     border-radius: 10px;
     /* Suaviza los bordes del cuadrado */
@@ -191,6 +193,18 @@
     
     color:#dee2e6; /* Cambia el color del enlace a negro */
     text-decoration: none; /* Elimina la subrayado del enlace */
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, Bold 700;
+    font-size: 24px;
+    display: grid;
+    flex-direction: column-reverse;
+    height: 100vh;
+    background-image: url('../../resources/Illustrations/human.png');
+    background-color: #d190ae; /* Color crema suave de fondo */
+    /* Incluye el ancho del borde en el tamaño total */
 }
 
 

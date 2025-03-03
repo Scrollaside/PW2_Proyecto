@@ -1,8 +1,0 @@
-Inicio de sesión
-Registro
-Dashboard/Muestreo de posts
-Perfil
-Edición de Perfil
-Post
-Edición/Creación de Post
-Estadisticas

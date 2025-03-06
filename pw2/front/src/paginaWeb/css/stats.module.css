@@ -1,0 +1,94 @@
+/* Personalización de menú------------------------------------ */
+#companyname {
+    font-family: sans-serif;
+    /* Cambiar la fuente a sans-serif */
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 6px;
+}
+
+#menu {
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#menuElements {
+    margin-left: auto;
+    font-family: system-ui;
+    /* Cambiar la fuente a sans-serif */
+    font-weight: lighter;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    transition: background-color 0.3s;
+    /* Agrega una transición suave */
+    transition: border-color 0.3s;
+    transition: font-weight 0.2s;
+    padding: 5px;
+    /* Añade un espacio entre el texto y el borde */
+    margin-right: 10px;
+}
+
+.nav-link:hover {
+    background-color: #f0f0f0;
+    /* Cambia el color de fondo al pasar el cursor sobre el enlace */
+    border-radius: 10px;
+    /* Suaviza los bordes del cuadrado */
+    font-weight: bold;
+}
+.nav-item img{
+    max-width: 80px;
+    /* Tamaño máximo de la imagen */
+    max-height: 80px;       
+    /* Alinea la imagen a la izquierda */    
+    border-radius: 60%;
+    /* Bordes redondeados */
+}
+
+/* Estilo personalizado para las estadisticas */
+.chartContainer {
+    background-color: rgb(238, 174, 153);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.buttonPrimary {
+    background-color: rgb(238, 174, 153);
+    color: white;
+    border: none;
+}
+
+.buttonSecondary {
+    background-color: gainsboro;
+    color: white;
+    border: none;
+}
+
+.buttonSuccess {
+    background-color: rgb(238, 174, 153);
+    color: white;
+    border: none;
+}
+
+
+.buttonGroup {    
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.buttonGroup .btn {
+    flex: 1;
+    margin: 0 10px;
+}
+.buttonGroup .btn:first-child {
+    margin-left: 0;
+}
+.buttonGroup .btn:last-child {
+    margin-right: 0;
+}

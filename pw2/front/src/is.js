@@ -72,7 +72,7 @@ const InicioSesion = () => {
                 body {
                     margin: 0;
                     background-color: #080808;
-                    background-image: url('/resources/Illustrations/login.jpg');
+                    background-image: url('/resources/Illustrations/Login.png');
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -87,7 +87,7 @@ const InicioSesion = () => {
                     height: 100%;
                     z-index: -1;
                     background-color: #080808;
-                    background-image: url('/resources/Illustrations/login.jpg');
+                    background-image: url('/resources/Illustrations/Login.png');
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;

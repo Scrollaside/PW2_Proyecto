@@ -20,6 +20,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 10px; /* Borde redondeado */
+        -webkit-backdrop-filter: blur(20px);
         backdrop-filter: blur(20px); /* Efecto de desenfoque */
         border: 2px solid rgb(255, 255, 255); /* Borde sólido */
         box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); /* Sombra */

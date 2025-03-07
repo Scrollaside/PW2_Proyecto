@@ -1,26 +1,17 @@
-.error {
-    color: red;
-    font-size: 0.8em;
-    display: block;
-    margin-top: 5px;
-}
-
-.input-error {
-    border: 1px solid red;
-}    
-
 .register-container {
-    width: 300px; /* Ancho del contenedor del formulario */
+    width: 400px; /* Ancho del contenedor del formulario */
     background-color: rgba(255, 255, 255, 0.13); /* Color de fondo con transparencia */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px; /* Borde redondeado */
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px); /* Efecto de desenfoque */
     border: 2px solid rgb(255, 255, 255); /* Borde sólido */
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6); /* Sombra */
-    padding: 30px 35px; /* Relleno */
+    padding: 20px 35px; /* Relleno reducido en altura */
+    color:#fff;
 }
 
 .register-container input,
@@ -32,7 +23,7 @@
 } 
 
 .register-container button {
-    background-color: #3498db; /* Color de fondo del botón */
+    background-color: #8f065a; /* Color de fondo del botón */
     color: #fff; /* Color del texto del botón */
     border: none;
     border-radius: 4px;
@@ -40,7 +31,18 @@
 }
 
 .register-container button:hover {
-    background-color: #2980b9; /* Cambio de color al pasar el cursor sobre el botón */
+    background-color: #570c43 /* Cambio de color al pasar el cursor sobre el botón */
 }
+
+.error {
+    color: red;
+    font-size: 0.8em;
+    display: block;
+    margin-top: 5px;
+}
+
+.input-error {
+    border: 1px solid red;
+}    
 
 

@@ -99,7 +99,7 @@ const Registro = () => {
     }
 
     try {
-      const response = await axiosInstance.post('http://localhost:3001/create', {
+      const response = await axiosInstance.post('http://localhost:3000/create', {
         usuario: name,
         apodo: nickN, // Agregar el apodo (nickname) al objeto enviado al servidor
         correo: mail,
@@ -108,8 +108,8 @@ const Registro = () => {
       console.log(response.data);
       //Alerta               
       Swal.fire(
-        'Bienvenido a DEEZY ' + name + '!',
-        'Gracias por unirte a deezy<3',
+        'Bienvenido a WEBART ' + name + '!',
+        'Gracias por unirte a WebArt',
         'success'
       ).then((result) => {
         if (result.isConfirmed) {
@@ -137,32 +137,32 @@ const Registro = () => {
 
         <form onSubmit={handleSubmit}>
 
-          <label htmlFor="name">Name:</label><br />
+          <label htmlFor="name">Nombre:</label><br />
           <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} />
           <span id="nameError" className={`${styles.error} error`}>{nameError}</span>
           <br />
 
 
 
-          <label htmlFor="nickN">Nickame:</label><br />
+          <label htmlFor="nickN">Apodo:</label><br />
           <input id="nickN" type="text" value={nickN} onChange={(e) => setNickN(e.target.value)} />
           <span id="nickError" className={`${styles.error} error`}>{nickError}</span>
           <br />
 
 
-          <label htmlFor="mail">Mail:</label><br />
+          <label htmlFor="mail">Correo:</label><br />
           <input id="mail" type="email" value={mail} onChange={(e) => setMail(e.target.value)} />
           <span id="mailError" className={`${styles.error} error`}>{mailError}</span>
           <br />
 
 
-          <label htmlFor="pass">Password:</label><br />
+          <label htmlFor="pass">Contraseña:</label><br />
           <input id="pass" type="password" value={pass} onChange={(e) => setPass(e.target.value)} />
           <span id="passError" className={`${styles.error} error`}>{passError}</span>
           <br />
 
 
-          <label htmlFor="pass2">Confirm Password:</label><br />
+          <label htmlFor="pass2">Confirmar Contraseña:</label><br />
           <input id="pass2" type="password" value={pass2} onChange={(e) => setPass2(e.target.value)} />
           <span id="pass2Error" className={`${styles.error} error`}>{pass2Error}</span>
           <br />
@@ -183,7 +183,7 @@ const Registro = () => {
       /* Ajustamos el margin a 0 */
       margin: 0;
       background-color: #3ea0ca; /* Color de fondo */
-      background-image: url('../../resources/Illustrations/Register.jpg');
+      background-image: url('../../resources/Illustrations/Login.png');
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -200,7 +200,7 @@ const Registro = () => {
         height: 100%;
         z-index: -1;
         background-color: #3ea0ca; /* Color de fondo */
-        background-image: url('../../resources/Illustrations/Register.jpg');
+        background-image: url('../../resources/Illustrations/Login.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

@@ -4,25 +4,25 @@ USE PW2;
 
 DROP TABLE IF EXISTS usuario;
 CREATE TABLE usuario (
-  id_usuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  foto_usuario mediumblob DEFAULT NULL,
-  nombre_usuario varchar(50) DEFAULT NULL,
-  nickname_usuario varchar(50) DEFAULT NULL,
-  desc_usuario varchar(255) DEFAULT NULL,
-  email_usuario varchar(50) DEFAULT NULL,
-  contrasenia_usuario varchar(50) DEFAULT NULL
+	id_usuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nombre_usuario varchar(50) DEFAULT NULL,
+	nickname_usuario varchar(50) DEFAULT NULL,
+	foto_usuario mediumblob DEFAULT NULL,
+	desc_usuario varchar(255) DEFAULT NULL,
+	email_usuario varchar(50) DEFAULT NULL,
+	contrasenia_usuario varchar(50) DEFAULT NULL
 );
 
 DROP TABLE IF EXISTS publicacion;
 CREATE TABLE publicacion (
-  id_post INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  id_autor INT DEFAULT NULL,
-  titulo_post varchar(50) DEFAULT NULL,
-  desc_post varchar(255) DEFAULT NULL,
-  fecha_post datetime DEFAULT NULL,
-  foto_post mediumblob DEFAULT NULL,
-  
-  FOREIGN KEY (id_autor) REFERENCES usuario (id_usuario)
+	id_post INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_autor INT DEFAULT NULL,
+	titulo_post varchar(50) DEFAULT NULL,
+	desc_post varchar(255) DEFAULT NULL,
+	fecha_post datetime DEFAULT NULL,
+	foto_post mediumblob DEFAULT NULL,
+    
+	FOREIGN KEY (id_autor) REFERENCES usuario (id_usuario)
 );
   
 DROP TABLE IF EXISTS categoria;

@@ -37,7 +37,7 @@ const InicioSesion = () => {
 
             if (response.data.alert === "Success") {
                 Swal.fire(
-                    'Bienvenido a DEEZY ' + user + '!',
+                    'Bienvenido a WEBART ' + user + '!',
                     '<3',
                     'success'
                 ).then((result) => {

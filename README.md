@@ -1,4 +1,5 @@
 Aldo Rogelio Gonzàlez Zapata 
+Jose Armando Hernandez Santander
 
 WEBART
 Una plataforma en línea donde artistas pueden compartir, descubrir y publicar arte. Ofrece recomendaciones personalizadas, interacción con la comunidad y opciones de descubrir obras de arte.

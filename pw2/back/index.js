@@ -5,7 +5,6 @@ const cors = require('cors');
 const multer = require('multer');
 const session = require('express-session');
 
-//Cors bien configurao
 app.use(cors({
     origin: 'http://localhost:3000', // Ajusta esto al puerto donde corre tu React app
     credentials: true // Permitir el envío de cookies
@@ -37,17 +36,17 @@ function verificarSesion(req, res, next) {
 //Configuración del servidor
 app.listen(3001,
     () => {
-        console.log("Escuchupapuando en puertopapu 3papumil");
+        console.log("Listening Port 3001");
     }
 )
 app.get('/', (req, res) => {
-    res.send('Hola putupapu3000');
+    res.send('Hola');
 });
 const db = mysql.createConnection(
     {
         host: "localhost",
         user: "root",
-        password: "",
+        password: "MYSQLpass", //cambiar a la contraseña de su base de datos
         database: "pw2"
     }
 )
@@ -134,7 +133,7 @@ app.post("/create", (req, resp) => {
 
 //Login para almacenar cosas 
 app.post("/login", (req, resp) => {
-    db.query("SELECT * FROM usuario WHERE nickname_usuario=? AND contrasenia_usuario=?", [req.body.us, req.body.con], (err, data) => {
+    db.query("SELECT * FROM usuario WHERE nickname_usuario = ? AND contrasenia_usuario = ?", [req.body.us, req.body.con], (err, data) => {
         if (err) {
             console.error("Error en la consulta:", err);
             resp.status(500).send(err); // Manejar errores de base de datos

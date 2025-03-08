@@ -38,7 +38,7 @@ const InicioSesion = () => {
             if (response.data.alert === "Success") {
                 Swal.fire(
                     'Bienvenido a WEBART ' + user + '!',
-                    '<3',
+                    'Iniciaste sesión correctamente',
                     'success'
                 ).then((result) => {
                     if (result.isConfirmed) {
@@ -46,11 +46,11 @@ const InicioSesion = () => {
                     }
                 });
             } else {
-                Swal.fire('Usuario no encontrado o contraseña incorrecta', ':C', 'error');
+                Swal.fire('Usuario no encontrado o contraseña incorrecta', 'error', 'error');
             }
         } catch (error) {
             console.error(error);
-            Swal.fire('No pudimos conectarnos al servidor', ':C', 'error');
+            Swal.fire('No pudimos conectarnos al servidor', 'error', 'error');
         }
     };
 

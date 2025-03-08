@@ -30,53 +30,52 @@
     padding: 5px;
     /* Añade un espacio entre el texto y el borde */
     margin-right: 10px;
+    color: #f0f0f0;
 }
 
 .nav-link:hover {
-    background-color: #f0f0f0;
+    background-color: #570c43;
     /* Cambia el color de fondo al pasar el cursor sobre el enlace */
+    color:  #f0f0f0;
     border-radius: 10px;
     /* Suaviza los bordes del cuadrado */
     font-weight: bold;
 }
-.nav-item img{
+
+.nav-item img {
     max-width: 80px;
     /* Tamaño máximo de la imagen */
-    max-height: 80px;       
-    /* Alinea la imagen a la izquierda */    
+    max-height: 80px;
+    /* Alinea la imagen a la izquierda */
     border-radius: 60%;
     /* Bordes redondeados */
 }
 
 /* Estilo personalizado para las imágenes */
-.card {   
+.card {
     margin-top: 10px;
     border: none;
     border-radius: 20px;
     margin-bottom: 10px;
-    /* Quita el borde */   
-    background-color: #E4AF9E;
-}
-/* Estilo específico para los enlaces dentro de los elementos con la clase "card" */
-.card a {
-    text-decoration: none;
+    /* Quita el borde */
+    background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
-.card img {   
+.card-body {
+    margin-top: 10px;
+    padding-left: 20px;
+    font-size: 100%;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.card img {
     border-radius: 10px;
     width: 90%;
     height: 90%;
     display: block; /* Hace que la imagen sea un bloque para centrarla correctamente */
     margin: 15px auto 0; /* Centra la imagen horizontalmente */
-}
-
-.card-body {
-    margin-top: 10px;
-    padding-left: 20px;    
-    
-    font-size: 100%;  
-    letter-spacing: 1px;
-    font-weight:600;    
-    color: #f0f0f0;
 }
 

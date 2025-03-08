@@ -6,7 +6,7 @@ import styles from '../paginaWeb/css/dashboard.module.css';  // Ajusta la ruta s
 function Menu({ perfil }) {
     return (
         <nav id={styles.menu} className="navbar navbar-expand-lg navbar-light">
-            <a id={styles.companyname} className="navbar-brand" href="#">DEEZY</a>
+            <a id={styles.companyname} className="navbar-brand" href="#">WEBART</a>
             <ul id={styles.menuElements} className="navbar-nav">
                 <li className={`${styles["nav-item"]}`}>
                     <Link className={`${styles["nav-link"]} nav-link`} to="/dashboard">Inicio</Link>

@@ -221,10 +221,10 @@ app.get('/userPosts/:userId', verificarSesion, (req, res) => {
 
         // Convertir las imágenes a base64
         const publicaciones = results.map(pub => {
-            const fotoPubli = pub.foto_publi ? pub.foto_publi.toString('base64') : null;
+            const fotopost = pub.foto_post ? pub.foto_post.toString('base64') : null;
             return {
                 ...pub,
-                imageUrl: fotoPubli ? `data:image/jpeg;base64,${fotoPubli}` : null
+                imageUrl: fotopost ? `data:image/jpeg;base64,${fotopost}` : null
             };
         });
 
@@ -301,7 +301,7 @@ app.put("/actualizarPerfil", verificarSesion, upload.single('foto'), (req, res) 
 // Ruta para obtener estadísticas de publicaciones/likes por día de la semana
 app.get('/stats/publicacionesLikes', verificarSesion, (req, res) => {
     const userId = req.session.userId;
-    const query = 'CALL getPublicacionesLikes(?)';
+    const query = 'CALL getpublicacionesLikes(?)';
 
     db.query(query, [userId], (err, results) => {
         if (err) {
@@ -346,41 +346,41 @@ app.get('/stats/seguidoresMensuales', verificarSesion, (req, res) => {
 
 
 
-//****************************** Acciones para las publis del perfil  ************************
-// Ruta para borrar una publicación usando un procedimiento almacenado
+//****************************** Acciones para las posts del perfil  ************************
+// Ruta para borrar una postcación usando un procedimiento almacenado
 app.delete('/deletePost/:postId', verificarSesion, (req, res) => {
     const { postId } = req.params;
 
-    const deletePostProcedure = 'CALL borrarPublis_byid(?)';
+    const deletePostProcedure = 'CALL borrarposts_byid(?)';
 
     db.query(deletePostProcedure, [postId], (err, result) => {
         if (err) {
-            console.error('Error al borrar la publicación:', err);
-            return res.status(500).send('Error al borrar la publicación');
+            console.error('Error al borrar la postcación:', err);
+            return res.status(500).send('Error al borrar la postcación');
         }
 
-        res.status(200).send('Publicación borrada exitosamente');
+        res.status(200).send('postcación borrada exitosamente');
     });
 });
-//Ruta para obtener la info de la publicación para editar
+//Ruta para obtener la info de la postcación para editar
 app.get('/publicacionEdit/:postId', (req, res) => {
     const { postId } = req.params;
 
-    const getPostQuery = 'SELECT * FROM publicacion WHERE id_publi = ?';
-    const getCategoriesQuery = 'SELECT id_cat FROM publi_cat WHERE id_publi = ?';
+    const getPostQuery = 'SELECT * FROM publicacion WHERE id_post = ?';
+    const getCategoriesQuery = 'SELECT id_cat FROM post_cat WHERE id_post = ?';
 
     db.query(getPostQuery, [postId], (err, postResult) => {
         if (err) {
-            console.error('Error al obtener la publicación:', err);
-            return res.status(500).send('Error al obtener la publicación');
+            console.error('Error al obtener la postcación:', err);
+            return res.status(500).send('Error al obtener la postcación');
         }
 
         if (postResult.length > 0) {
             const post = postResult[0];
-            const fotoPubli = post.foto_publi ? post.foto_publi.toString('base64') : null;
+            const fotopost = post.foto_post ? post.foto_post.toString('base64') : null;
             const postDetails = {
                 ...post,
-                imageUrl: fotoPubli ? `data:image/jpeg;base64,${fotoPubli}` : null
+                imageUrl: fotopost ? `data:image/jpeg;base64,${fotopost}` : null
             };
 
             db.query(getCategoriesQuery, [postId], (err, categoriesResult) => {
@@ -394,11 +394,11 @@ app.get('/publicacionEdit/:postId', (req, res) => {
                 res.json(postDetails);
             });
         } else {
-            res.status(404).send('Publicación no encontrada');
+            res.status(404).send('postcación no encontrada');
         }
     });
 });
-// Ruta para actualizar una publicación existente
+// Ruta para actualizar una postcación existente
 app.put('/updatePost/:postId', verificarSesion, upload.single('image'), (req, res) => {
     const { postId } = req.params;
     const { title, description, categories } = req.body;
@@ -412,14 +412,14 @@ app.put('/updatePost/:postId', verificarSesion, upload.single('image'), (req, re
     const queryParams = [title, description, postId];
 
     if (image) {
-        updatePostQuery = 'UPDATE publicacion SET titulo_publi = ?, desc_publi = ?, foto_publi = ? WHERE id_publi = ?';
+        updatePostQuery = 'UPDATE publicacion SET titulo_post = ?, desc_post = ?, foto_post = ? WHERE id_post = ?';
         queryParams.splice(2, 0, image); // Insertar la imagen en la posición correcta en queryParams
     } else {
-        updatePostQuery = 'UPDATE publicacion SET titulo_publi = ?, desc_publi = ? WHERE id_publi = ?';
+        updatePostQuery = 'UPDATE publicacion SET titulo_post = ?, desc_post = ? WHERE id_post = ?';
     }
 
-    const deleteCategoriesQuery = 'DELETE FROM publi_cat WHERE id_publi = ?';
-    const addCategoryQuery = 'INSERT INTO publi_cat (id_publi, id_cat) VALUES (?, ?)';
+    const deleteCategoriesQuery = 'DELETE FROM post_cat WHERE id_post = ?';
+    const addCategoryQuery = 'INSERT INTO post_cat (id_post, id_cat) VALUES (?, ?)';
 
     db.beginTransaction(err => {
         if (err) {
@@ -429,9 +429,9 @@ app.put('/updatePost/:postId', verificarSesion, upload.single('image'), (req, re
 
         db.query(updatePostQuery, queryParams, (err, result) => {
             if (err) {
-                console.error('Error al actualizar la publicación:', err);
+                console.error('Error al actualizar la postcación:', err);
                 return db.rollback(() => {
-                    res.status(500).send('Error al actualizar la publicación');
+                    res.status(500).send('Error al actualizar la postcación');
                 });
             }
 
@@ -466,7 +466,7 @@ app.put('/updatePost/:postId', verificarSesion, upload.single('image'), (req, re
                                 });
                             }
 
-                            res.status(200).send('Publicación actualizada exitosamente');
+                            res.status(200).send('postcación actualizada exitosamente');
                         });
                     })
                     .catch(err => {
@@ -487,29 +487,29 @@ app.put('/updatePost/:postId', verificarSesion, upload.single('image'), (req, re
 
 
 
-//****************************** Ventana de publicación ************************
+//****************************** Ventana de postcación ************************
 //Obtener info para la ventana de publicacion
-app.get('/publicacion/:id_publi', (req, res) => {
-    const { id_publi } = req.params;
+app.get('/publicacion/:id_post', (req, res) => {
+    const { id_post } = req.params;
 
-    const publicacionQuery = 'CALL getPublicacion(?)';
+    const publicacionQuery = 'CALL getpublicacion(?)';
     const comentariosQuery = 'CALL getComentarios(?)';
     const categoriasQuery = 'CALL getCategorias(?)';
     const recomendacionesQuery = 'CALL getRecomendaciones(?)';
     const recientesQuery = 'CALL getRecientesAutor(?)';
 
-    db.query(publicacionQuery, [id_publi], (err, publicacionResult) => {
-        if (err) return res.status(500).send('Error al obtener la publicación');
-        if (publicacionResult[0].length === 0) return res.status(404).send('Publicación no encontrada');
+    db.query(publicacionQuery, [id_post], (err, publicacionResult) => {
+        if (err) return res.status(500).send('Error al obtener la postcación');
+        if (publicacionResult[0].length === 0) return res.status(404).send('postcación no encontrada');
 
         const publicacion = publicacionResult[0][0];
         //console.log(publicacion.id_autor);
-        const fotoPubli = publicacion.foto_publi ? publicacion.foto_publi.toString('base64') : null;
+        const fotopost = publicacion.foto_post ? publicacion.foto_post.toString('base64') : null;
         const fotoAutor = publicacion.foto_usuario ? publicacion.foto_usuario.toString('base64') : null;
-        publicacion.imageUrl = fotoPubli ? `data:image/jpeg;base64,${fotoPubli}` : null;
+        publicacion.imageUrl = fotopost ? `data:image/jpeg;base64,${fotopost}` : null;
         publicacion.autorPfp = fotoAutor ? `data:image/jpeg;base64,${fotoAutor}` : null;
 
-        db.query(comentariosQuery, [id_publi], (err, comentariosResult) => {
+        db.query(comentariosQuery, [id_post], (err, comentariosResult) => {
             if (err) return res.status(500).send('Error al obtener los comentarios');
             publicacion.comentarios = comentariosResult[0].map(comentario => {
                 const comentarioFoto = comentario.foto_usuario ? comentario.foto_usuario.toString('base64') : null;
@@ -521,26 +521,26 @@ app.get('/publicacion/:id_publi', (req, res) => {
                 };
             });
 
-            db.query(categoriasQuery, [id_publi], (err, categoriasResult) => {
+            db.query(categoriasQuery, [id_post], (err, categoriasResult) => {
                 if (err) return res.status(500).send('Error al obtener las categorías');
                 publicacion.categorias = categoriasResult[0].map(cat => cat.title_cat);
 
-                db.query(recomendacionesQuery, [id_publi], (err, recomendacionesResult) => {
+                db.query(recomendacionesQuery, [id_post], (err, recomendacionesResult) => {
                     if (err) return res.status(500).send('Error al obtener las recomendaciones');
                     publicacion.recomendaciones = recomendacionesResult[0].map(rec => {
-                        const recFoto = rec.foto_publi ? rec.foto_publi.toString('base64') : null;
+                        const recFoto = rec.foto_post ? rec.foto_post.toString('base64') : null;
                         return {
-                            id: rec.id_publi,
+                            id: rec.id_post,
                             imageUrl: recFoto ? `data:image/jpeg;base64,${recFoto}` : null
                         };
                     });
 
-                    db.query(recientesQuery, [id_publi], (err, recientesResult) => {
+                    db.query(recientesQuery, [id_post], (err, recientesResult) => {
                         if (err) return res.status(500).send('Error al obtener las publicaciones recientes');
                         publicacion.recientes = recientesResult[0].map(rec => {
-                            const recFoto = rec.foto_publi ? rec.foto_publi.toString('base64') : null;
+                            const recFoto = rec.foto_post ? rec.foto_post.toString('base64') : null;
                             return {
-                                id: rec.id_publi,
+                                id: rec.id_post,
                                 imageUrl: recFoto ? `data:image/jpeg;base64,${recFoto}` : null
                             };
                         });
@@ -554,18 +554,18 @@ app.get('/publicacion/:id_publi', (req, res) => {
 });
 //Subir comms
 app.post('/addComm', verificarSesion, (req, res) => {
-    const { id_publi, commentText } = req.body;
+    const { id_post, commentText } = req.body;
     const userId = req.session.userId;
 
     console.log('req.body:', req.body);
     console.log('userId:', userId);
 
-    if (!id_publi || !commentText) {
+    if (!id_post || !commentText) {
         return res.status(400).send('Faltan datos requeridos');
     }
 
     const agregarComentarioQuery = 'INSERT INTO comentario (id_usuario, desc_comm) VALUES (?, ?)';
-    const conectarComentarioQuery = 'INSERT INTO publi_comm (id_publi, id_comm) VALUES (?, ?)';
+    const conectarComentarioQuery = 'INSERT INTO post_comm (id_post, id_comm) VALUES (?, ?)';
 
     db.beginTransaction(err => {
         if (err) {
@@ -583,11 +583,11 @@ app.post('/addComm', verificarSesion, (req, res) => {
 
             const id_comentario = result.insertId;
 
-            db.query(conectarComentarioQuery, [id_publi, id_comentario], (err) => {
+            db.query(conectarComentarioQuery, [id_post, id_comentario], (err) => {
                 if (err) {
-                    console.error('Error al conectar el comentario con la publicación:', err);
+                    console.error('Error al conectar el comentario con la postcación:', err);
                     return db.rollback(() => {
-                        res.status(500).send('Error al conectar el comentario con la publicación');
+                        res.status(500).send('Error al conectar el comentario con la postcación');
                     });
                 }
 
@@ -653,11 +653,11 @@ app.get('/isFollowing/:authorId', verificarSesion, (req, res) => {
 });
 
 
-// Ruta para obtener el número de likes de una publicación
+// Ruta para obtener el número de likes de una postcación
 app.get('/likes/:postId', (req, res) => {
     const { postId } = req.params;
 
-    const getLikesQuery = 'SELECT COUNT(*) AS likes FROM likes WHERE id_publi = ?';
+    const getLikesQuery = 'SELECT COUNT(*) AS likes FROM likes WHERE id_post = ?';
 
     db.query(getLikesQuery, [postId], (err, results) => {
         if (err) {
@@ -668,13 +668,13 @@ app.get('/likes/:postId', (req, res) => {
         res.json({ likes: results[0].likes });
     });
 });
-// Ruta para agregar un like a una publicación
+// Ruta para agregar un like a una postcación
 app.post('/like', verificarSesion, (req, res) => {
     const { postId } = req.body;
     const userId = req.session.userId;
 
     // Verificar si el usuario ya ha dado like
-    const checkLikeQuery = 'SELECT * FROM likes WHERE id_publi = ? AND id_usuario = ?';
+    const checkLikeQuery = 'SELECT * FROM likes WHERE id_post = ? AND id_usuario = ?';
 
     db.query(checkLikeQuery, [postId, userId], (err, results) => {
         if (err) {
@@ -683,9 +683,9 @@ app.post('/like', verificarSesion, (req, res) => {
         }
 
         if (results.length > 0) {
-            return res.status(400).send('Ya has dado like a esta publicación');
+            return res.status(400).send('Ya has dado like a esta postcación');
         } else {
-            const addLikeQuery = 'INSERT INTO likes (id_publi, id_usuario, fecha_like) VALUES (?, ?, NOW())';
+            const addLikeQuery = 'INSERT INTO likes (id_post, id_usuario, fecha_like) VALUES (?, ?, NOW())';
 
             db.query(addLikeQuery, [postId, userId], (err, result) => {
                 if (err) {
@@ -698,12 +698,12 @@ app.post('/like', verificarSesion, (req, res) => {
         }
     });
 });
-// Ruta para quitar un like de una publicación (opcional)
+// Ruta para quitar un like de una postcación (opcional)
 app.post('/unlike', verificarSesion, (req, res) => {
     const { postId } = req.body;
     const userId = req.session.userId;
 
-    const removeLikeQuery = 'DELETE FROM likes WHERE id_publi = ? AND id_usuario = ?';
+    const removeLikeQuery = 'DELETE FROM likes WHERE id_post = ? AND id_usuario = ?';
 
     db.query(removeLikeQuery, [postId, userId], (err, result) => {
         if (err) {
@@ -714,12 +714,12 @@ app.post('/unlike', verificarSesion, (req, res) => {
         res.status(200).send('Like quitado exitosamente');
     });
 });
-// Ruta para verificar si el usuario ha dado like a una publicación
+// Ruta para verificar si el usuario ha dado like a una postcación
 app.get('/isLiked/:postId', verificarSesion, (req, res) => {
     const userId = req.session.userId;
     const { postId } = req.params;
 
-    const isLikedQuery = 'SELECT * FROM likes WHERE id_publi = ? AND id_usuario = ?';
+    const isLikedQuery = 'SELECT * FROM likes WHERE id_post = ? AND id_usuario = ?';
 
     db.query(isLikedQuery, [postId, userId], (err, results) => {
         if (err) {
@@ -742,8 +742,8 @@ app.post('/addPost', verificarSesion, upload.single('image'), (req, res) => {
         return res.status(400).send('Faltan datos requeridos');
     }
 
-    const addPostQuery = 'INSERT INTO publicacion (id_autor, titulo_publi, desc_publi, foto_publi, fecha_publi) VALUES (?, ?, ?, ?, NOW())';
-    const addCategoryQuery = 'INSERT INTO publi_cat (id_publi, id_cat) VALUES (?, ?)';
+    const addPostQuery = 'INSERT INTO publicacion (id_autor, titulo_post, desc_post, foto_post, fecha_post) VALUES (?, ?, ?, ?, NOW())';
+    const addCategoryQuery = 'INSERT INTO post_cat (id_post, id_cat) VALUES (?, ?)';
 
     db.beginTransaction(err => {
         if (err) {
@@ -753,9 +753,9 @@ app.post('/addPost', verificarSesion, upload.single('image'), (req, res) => {
 
         db.query(addPostQuery, [userId, title, description, image], (err, result) => {
             if (err) {
-                console.error('Error al agregar la publicación:', err);
+                console.error('Error al agregar la postcación:', err);
                 return db.rollback(() => {
-                    res.status(500).send('Error al agregar la publicación');
+                    res.status(500).send('Error al agregar la postcación');
                 });
             }
 
@@ -784,7 +784,7 @@ app.post('/addPost', verificarSesion, upload.single('image'), (req, res) => {
                             });
                         }
 
-                        res.status(201).send('Publicación agregada exitosamente');
+                        res.status(201).send('postcación agregada exitosamente');
                     });
                 })
                 .catch(err => {
@@ -825,7 +825,7 @@ app.get('/categorias', (req, res) => {
 //******************************DashBoard ************************
 app.get("/getnewtoold",
     (req, resp) => {
-        db.query("CALL publis_newtoold",
+        db.query("CALL posts_newtoold",
             (error, data) => {
                 if (error) {
                     resp.send(error);
@@ -842,7 +842,7 @@ app.get("/getnewtoold",
 app.get("/getufollowed", verificarSesion, (req, resp) => {
     const userId = req.session.userId; // Usar el ID del usuario desde la sesión
     if (userId) {
-        db.query("CALL publis_ufollowed(?)", [userId], (error, data) => {
+        db.query("CALL posts_ufollowed(?)", [userId], (error, data) => {
             if (error) {
                 resp.status(500).send(error);
             } else if (data.length > 0) {

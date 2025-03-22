@@ -35,11 +35,11 @@ export function usePerfil() {
     return perfil;
 }
 
-export function usePublicacion(id_publi) {
+export function usePublicacion(id_post) {
     const [publicacion, setPublicacion] = useState({});
 
     useEffect(() => {
-        axiosInstance.get(`/publicacion/${id_publi}`)
+        axiosInstance.get(`/publicacion/${id_post}`)
             .then(response => {
                 const data = response.data;
                 //console.log(response.data.id_autor);
@@ -52,9 +52,9 @@ export function usePublicacion(id_publi) {
                 setPublicacion(data);
             })
             .catch(error => {
-                console.error("Error al obtener la información de la publicación:", error);
+                console.error("Error al obtener la información de la postcación:", error);
             });
-    }, [id_publi]);
+    }, [id_post]);
 
     return [publicacion, setPublicacion];
 }
@@ -111,14 +111,14 @@ export function useComment() {
     const [commentText, setCommentText] = useState('');
     const [commentError, setCommentError] = useState('');
 
-    const handleFormSubmit = (event, id_publi, id_usuario, reloadComments) => {
+    const handleFormSubmit = (event, id_post, id_usuario, reloadComments) => {
         event.preventDefault();
         if (commentText.trim() === '') {
             setCommentError('Por favor, escribe un comentario antes de enviar.');
         } else {
             setCommentError('');
             console.log(commentText)
-            axiosInstance.post('/addComm', { id_publi, id_usuario, commentText })
+            axiosInstance.post('/addComm', { id_post, id_usuario, commentText })
                 .then(() => {
                     setCommentText('');
                     window.location.reload(); // Recargar la página
@@ -176,7 +176,7 @@ export function useLikes(postId) {
                         Swal.fire({
                             icon: 'warning',
                             title: 'Advertencia',
-                            text: 'Ya has dado like a esta publicación'
+                            text: 'Ya has dado like a esta postcación'
                         });
                     } else {
                         console.error('Error al agregar el like:', error);

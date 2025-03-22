@@ -39,7 +39,7 @@ function Dashboard() {
         const convertImagesToBase64 = async () => {
             if (allImg.length > 0 && Array.isArray(allImg[0]) && allImg[0].length > 0) {
                 const base64Promises = allImg[0].map((val) => {
-                    const blob = new Blob([new Uint8Array(val.foto_publi.data)], { type: 'image/jpeg' });
+                    const blob = new Blob([new Uint8Array(val.foto_post.data)], { type: 'image/jpeg' });
                     const reader = new FileReader();
                     reader.readAsDataURL(blob);
                     return new Promise((resolve) => {
@@ -86,8 +86,8 @@ function Dashboard() {
                             (base64String, index) => (
                                 {
                                     imageUrl: base64String,
-                                    title: allImg[0][index].titulo_publi,
-                                    idPubli: allImg[0][index].id_publi
+                                    title: allImg[0][index].titulo_post,
+                                    idpost: allImg[0][index].id_post
                                 }
                             )
                         )

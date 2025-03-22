@@ -1,6 +1,5 @@
 USE pw2;
 
-
 -- TRUNCATE TABLE usuario; --
 
 INSERT INTO usuario (nombre_usuario, nickname_usuario, foto_usuario, desc_usuario, email_usuario, contrasenia_usuario) VALUES

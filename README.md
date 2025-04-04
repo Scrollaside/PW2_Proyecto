@@ -1,5 +1,4 @@
-Aldo Rogelio Gonzàlez Zapata 
-Jose Armando Hernandez Santander
+Aldo Rogelio Gonzàlez Zapata, Jose Armando Hernandez Santander
 
 WEBART
 WebArt es una aplicación dirigida a los artistas, donde pueden subir dibujos, modelos, render, etc. Podrán interactuar dándole likes, una comunidad de galería para admirar el arte de los artistas. 

@@ -2,10 +2,10 @@ import React from 'react';
 import styles from '../paginaWeb/css/dashboard.module.css';
 import { Link } from 'react-router-dom'; // Asumiendo que estás usando React Router
 
-function Card({ imageUrl, title, idPubli }) {
+function Card({ imageUrl, title, idpost }) {
     return (
         <div className={`${styles.card} card`}>
-            <Link to={`/publicacion/${idPubli}`}>
+            <Link to={`/publicacion/${idpost}`}>
                 <img src={`data:image/jpeg;base64,${imageUrl}`} alt={title} />
                 <div className={`${styles["card-body"]} card-body`}>
                     <p className="card-title">{title}</p>

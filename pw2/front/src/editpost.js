@@ -38,8 +38,8 @@ function Editpost() {
         axiosInstance.get(`/publicacionEdit/${postId}`)
             .then(response => {
                 const post = response.data;
-                setTitle(post.titulo_publi);
-                setDescription(post.desc_publi);
+                setTitle(post.titulo_post);
+                setDescription(post.desc_post);
                 const initialCategories = response.data.categories.reduce((acc, categoryId) => {
                     acc[categoryId] = true;
                     return acc;
@@ -50,7 +50,7 @@ function Editpost() {
                 }
             })
             .catch(error => {
-                console.error("Error al obtener los datos de la publicación:", error);
+                console.error("Error al obtener los datos de la postcación:", error);
             });
     }, [postId]);
 
@@ -113,7 +113,7 @@ function Editpost() {
             })
             .then(response => {
                 Swal.fire({
-                    title: 'Tu publicación se actualizó con éxito',
+                    title: 'Tu postcación se actualizó con éxito',
                     text: '<3',
                     icon: 'success',
                     confirmButtonText: 'Yeiiiiii :DD'
@@ -124,10 +124,10 @@ function Editpost() {
                 });
             })
             .catch(error => {
-                console.error("Error al actualizar la publicación:", error);
+                console.error("Error al actualizar la postcación:", error);
                 Swal.fire({
                     title: 'Error',
-                    text: 'Hubo un problema al actualizar la publicación.',
+                    text: 'Hubo un problema al actualizar la postcación.',
                     icon: 'error',
                     confirmButtonText: 'OK'
                 });

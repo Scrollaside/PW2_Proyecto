@@ -98,7 +98,7 @@ const Perfil = () => {
                         <div id={styles.pfn}>
                             <h3>@{perfil.nickname}</h3>
                         </div>
-                        {/* {console.log(userPosts[0].id_publi)} */}
+                        {/* {console.log(userPosts[0].id_post)} */}
                         <UserPosts posts={userPosts} onDelete={mostrarVentanaConfirmacion} loggedInUserId={perfilMenu.ID} />
                     </div>
                 </div>

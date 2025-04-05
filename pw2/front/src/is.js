@@ -13,7 +13,7 @@ const InicioSesion = () => {
             try {
                 const response = await axiosInstance.get('/perfilMenu');
                 if (response.status === 200) {
-                    nav('/dashboard');
+                    nav('/Dashboard');
                 }
             } catch (error) {
                 //console.error('No hay sesión activa:', error);
@@ -42,7 +42,7 @@ const InicioSesion = () => {
                     'success'
                 ).then((result) => {
                     if (result.isConfirmed) {
-                        nav("/dashboard");
+                        nav("/Dashboard");
                     }
                 });
             } else {

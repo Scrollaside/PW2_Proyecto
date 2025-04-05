@@ -8,7 +8,7 @@ function CardContainer({ data }) {
             <div className="row row-cols-1 row-cols-md-3" data-masonry='{"percentPosition": true }'>
                 {data.map((item, index) => (
                     <div className="col" key={index}>                        
-                        <Card imageUrl={item.imageUrl} title={item.title} idpost={item.idpost} />
+                        <Card imageUrl={item.imageUrl} title={item.title} idPost={item.idPost} />
                     </div>
                 ))}
             </div>

@@ -19,7 +19,7 @@ function Menu({ perfil }) {
                 </li>
                 <li className={`${styles["nav-item"]}`}>
                     <Link to={`/perfil/${perfil.ID}`} >
-                        {perfil.foto ? <img src={perfil.foto} alt="Perfil" /> : <img src="/resources/pfp/lovers.jpeg" alt="PFP" />}
+                        {perfil.foto ? <img src={perfil.foto} alt="Perfil" /> : <img src="/resources/pfp/user.jpeg" alt="PFP" />}
                     </Link>
                 </li>
             </ul>

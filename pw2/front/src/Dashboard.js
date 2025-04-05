@@ -87,7 +87,7 @@ function Dashboard() {
                                 {
                                     imageUrl: base64String,
                                     title: allImg[0][index].titulo_post,
-                                    idpost: allImg[0][index].id_post
+                                    idPost: allImg[0][index].id_post
                                 }
                             )
                         )

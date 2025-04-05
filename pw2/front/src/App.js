@@ -33,7 +33,7 @@ function App() {
         <Route path='/perfil/:userId' element={<Perfil />}></Route>
 
         {/* <Route path='/publicacion' element={<Publicacion />}></Route> */}
-        <Route path='/publicacion/:id_publi' element={<Publicacion />}></Route> {/* Ruta actualizada */}
+        <Route path='/publicacion/:id_post' element={<Publicacion />}></Route> {/* Ruta actualizada */}
 
         <Route path='/editperfil' element={<Editperfil />}></Route>
 

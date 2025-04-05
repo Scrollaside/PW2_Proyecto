@@ -11,11 +11,11 @@ import Comentarios from './components/Comentarios';
 import Recomendaciones from './components/Recomendaciones';
 
 function Publicacion() {
-    const { id_publi } = useParams();
+    const { id_post } = useParams();
     const perfil = usePerfil();
-    const [publicacion, setPublicacion] = usePublicacion(id_publi);
+    const [publicacion, setPublicacion] = usePublicacion(id_post);
     const { followed, handleFollowButtonClick } = useFollow(publicacion.id_autor);
-    const { likes, liked, handleLikeButtonClick } = useLikes(id_publi);
+    const { likes, liked, handleLikeButtonClick } = useLikes(id_post);
     const { commentText, setCommentText, commentError, handleFormSubmit } = useComment();
 
     return (
@@ -41,7 +41,7 @@ function Publicacion() {
                             <div id={styles.addInfo}>
                                 <p className="autorInfo" id={publicacion.id_autor}>{publicacion.autorNombre}</p>
                                 {/* <p id="autor">{publicacion.autorNombre}</p> */}
-                                {/* <p id="dateP">{publicacion.fecha_publi}</p> */}
+                                {/* <p id="dateP">{publicacion.fecha_post}</p> */}
                             </div>
 
                             <button id={styles.followButton} className="btn btn-primary" onClick={handleFollowButtonClick}>
@@ -66,12 +66,12 @@ function Publicacion() {
                     </div>
 
                     <div id={styles.postInfo} className="col-md-3">
-                        <h2 id={styles.titleP}>{publicacion.titulo_publi}</h2>
-                        <p id={styles.descP}>{publicacion.desc_publi}</p>
+                        <h2 id={styles.titleP}>{publicacion.titulo_post}</h2>
+                        <p id={styles.descP}>{publicacion.desc_post}</p>
 
                         <Comentarios comentarios={publicacion.comentarios} />
 
-                        <form id={styles.commentForm} onSubmit={(e) => handleFormSubmit(e, id_publi)}>
+                        <form id={styles.commentForm} onSubmit={(e) => handleFormSubmit(e, id_post)}>
                             <div className="form-group">
                                 <label htmlFor="commentText">Agregar comentario:</label>
                                 <textarea className="form-control" id="commentText" rows="3" value={commentText} onChange={(e) => setCommentText(e.target.value)}></textarea>

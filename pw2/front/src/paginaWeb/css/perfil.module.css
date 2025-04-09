@@ -34,7 +34,8 @@
 }
 
 .nav-link:hover {
-    background-color: #f0f0f0;
+    background-color: #570c43;
+    color: #f0f0f0;
     /* Cambia el color de fondo al pasar el cursor sobre el enlace */
     border-radius: 10px;
     /* Suaviza los bordes del cuadrado */
@@ -75,7 +76,7 @@
 
 #pubpfp {
     /* Personalización del contenedor */
-    background-color: #E4AF9E;
+    background-color: #ab90f0;
     padding: 20px;
     /* Espaciado interno */
     border: 1px solid #dee2e6;
@@ -139,7 +140,7 @@
 /* Personalización de la info del usuario */
 #pfn {
     /* Personalización del contenedor */
-    background-color: #E4AF9E;
+    background-color: #ab90f0;
     padding: 20px;
     /* Espaciado interno */
     border: 1px solid #dee2e6;
@@ -153,7 +154,7 @@
 
 #pfp {
     text-align: center;
-    background-color: #E4AF9E;
+    background-color: #ab90f0;
     padding: 20px;
     /* Espaciado interno */
     border: 1px solid #dee2e6;
@@ -161,7 +162,7 @@
     border-radius: 8px;
     /* Bordes redondeados */
     display: inline-block;
-    position: relative;   
+    position: relative;     
 }
 
 #pfp img {

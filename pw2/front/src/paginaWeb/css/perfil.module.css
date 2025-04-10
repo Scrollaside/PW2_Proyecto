@@ -118,8 +118,7 @@
     right: 0;
     padding: 10px;
     font-size: 28px;   
-    
-    color:#dee2e6; /* Cambia el color del enlace a negro */
+    color: #8f0624; /* Cambia el color del enlace a negro */
     text-decoration: none; /* Elimina la subrayado del enlace */
 }
 #removePub {
@@ -132,7 +131,7 @@
     padding: 10px;     
     font-size: 28px;
     
-    color:red; /* Cambia el color del enlace a negro */
+    color: #ab90f0; /* Cambia el color del enlace a negro */
     text-decoration: none; /* Elimina la subrayado del enlace */
 }
 
@@ -141,7 +140,8 @@
 /* Personalización de la info del usuario */
 #pfn {
     /* Personalización del contenedor */
-    background-color: #ab90f0;
+    background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 20px;
     /* Espaciado interno */
     border: 1px solid #dee2e6;
@@ -155,7 +155,8 @@
 
 #pfp {
     text-align: center;
-    background-color: #ab90f0;
+    background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 20px;
     /* Espaciado interno */
     border: 1px solid #dee2e6;
@@ -180,15 +181,22 @@
 #featured,
 #featured a {
     text-align: left;
-    color: bisque;
+    color: #2b013b;
     font-weight: lighter;
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 #featured a {
     display: block;
     margin-bottom: 10px; /* Opcional: puedes ajustar el margen entre cada enlace según tu preferencia */
     text-decoration: none;
+}
+
+#featured a:hover {
+    
+    color: #2b013b;
+    transform: scale(1.1);
 }
 
 #editButton {
@@ -198,9 +206,20 @@
     padding: 10px;  
     font-size: 20px;   
     
-    color:#dee2e6; /* Cambia el color del enlace a negro */
+    color: #1b0061; /* Cambia el color del enlace a negro */
     text-decoration: none; /* Elimina la subrayado del enlace */
 }
 
+.mi-boton {
+    background-color: #8f065a; /* tu color personalizado */
+    border-color: #8f065a;
+    color: white;
+  }
+  
+  .mi-boton:hover {
+    background-color: #ab90f0;
+    border-color: #ab90f0;
+    color: #2b013b;
+  }
 
 /* ------------------------------------------------------------ */

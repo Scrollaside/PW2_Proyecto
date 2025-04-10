@@ -56,12 +56,13 @@
 #pfinfo {
     margin-left: 4%;
      /* Personalización del contenedor */
-     background-color: #E4AF9E;
+     background-color: rgba(255, 255, 255, 0.13);
+     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
      padding: 20px;
      /* Espaciado interno */
-     border: 1px solid #dee2e6;
+     border: none;
      /* Borde */
-     border-radius: 8px;
+     border-radius: 20px;
      /* Bordes redondeados */
      /* Alineación del texto */
      overflow: auto;
@@ -81,24 +82,25 @@
     width: auto;
     height: auto;        
     border-radius: 50%; /* Hacer los bordes del botón redondeados */
-    border: 5px solid white; /* Agregar un borde blanco de 5 píxeles */
+    border: 5px solid #2b013b; /* Agregar un borde blanco de 5 píxeles */
 }
 #pfp button {
     position: absolute; /* Hacer que el botón tenga posición absoluta para que pueda posicionarse correctamente */
-    bottom: 20px; /* Distancia desde la parte inferior */
+    bottom: 3px; /* Distancia desde la parte inferior */
     left: 50%; /* Centrar horizontalmente */
     transform: translateX(-50%); /* Centrar horizontalmente */
     display: none; /* Ocultar el botón inicialmente */
 
-    background-color: white; /* Cambiar el color de fondo del botón */
-    border-radius: 10px; /* Hacer los bordes del botón redondeados */
-    border-color: white; /* Cambiar el color del borde del botón */
-    color: #D3BFFF; /* Cambiar el color del texto del botón */
+    background-color: #8f065a;; /* Cambiar el color de fondo del botón */
+    border-radius: 8px; /* Hacer los bordes del botón redondeados */
+    color: white; /* Cambiar el color del texto del botón */
 
     font-family: 'Roboto', sans-serif; /* Cambiar la fuente del texto del botón */
 }
 #pfp:hover button {
     display: block; /* Mostrar el botón cuando el mouse está sobre el contenedor */
+    background-color: #ab90f0;
+      color: #2b013b;
 }
 /*Personalización de inputs*/
 #pfnick {
@@ -110,7 +112,7 @@
 }
 #inputs {
     margin-top: 2%;
-    color: #D3BFFF; /* Color del texto */
+    color: #2b013b; /* Color del texto */
     border: none;
     border-radius: 10px; /* Bordes redondeados */
     font-size: 20px; /* Tamaño del texto */
@@ -120,7 +122,7 @@
     outline: none; /* Quitar el borde de enfoque por defecto */
 }
 #inputs::placeholder {
-    color: #D3BFFF; /* Color del marcador de posición */
+    color: #a05cbbb7; /* Color del marcador de posición */
 }
 #guardaInfo {
     position: relative;

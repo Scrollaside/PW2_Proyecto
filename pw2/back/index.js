@@ -42,6 +42,7 @@ app.listen(3001,
 app.get('/', (req, res) => {
     res.send('Hola');
 });
+
 const db = mysql.createConnection(
     {
         host: "localhost",
@@ -50,6 +51,7 @@ const db = mysql.createConnection(
         database: "pw2"
     }
 )
+
 //Para las imágenes
 const fileFil = (req, file, cb) => {
     // reject a file

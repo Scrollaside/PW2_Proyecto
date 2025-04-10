@@ -76,7 +76,8 @@
 
 #pubpfp {
     /* Personalización del contenedor */
-    background-color: #ab90f0;
+    background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 20px;
     /* Espaciado interno */
     border: 1px solid #dee2e6;

@@ -60,7 +60,7 @@
      box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
      padding: 20px;
      /* Espaciado interno */
-     border: none;
+     border: 1px solid #dee2e6;
      /* Borde */
      border-radius: 20px;
      /* Bordes redondeados */

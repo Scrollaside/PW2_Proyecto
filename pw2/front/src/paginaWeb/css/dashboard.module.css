@@ -4,12 +4,10 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: linear-gradient(135deg, 
-      #2b013b, 
-      #570c43, 
+    background: linear-gradient(135deg,  
       #8f065a, 
-      hsl(290, 62%, 41%), 
-      #9f7afd
+      hsl(325, 62%, 41%), 
+      #fd7acb
     );
     background-size: 400% 400%;
     animation: gradientFlow 5s ease infinite;
@@ -24,12 +22,28 @@ body {
   }
 
 #companyname {
-    font-family: sans-serif;
-    /* Cambiar la fuente a sans-serif */
-    font-weight: bold;
-    font-size: 28px;
-    letter-spacing: 6px;
+    text-decoration: none;
+  font-weight: bold;
+  font-size: 1.8rem;
+  background: linear-gradient(270deg, #b6709b, #ab90f0, #f1eefd, #ad3e83);
+  background-size: 400% 400%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: animarDegradado 8s ease infinite;
 }
+
+@keyframes animarDegradado {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
 #menu {
     /*margin-top: 2%;

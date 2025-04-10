@@ -10,7 +10,7 @@ body {
       #fd7acb
     );
     background-size: 400% 400%;
-    animation: gradientFlow 5s ease infinite;
+    animation: gradientFlow 15s ease infinite;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }

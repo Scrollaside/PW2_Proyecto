@@ -8,12 +8,12 @@ body {
       #2b013b, 
       #570c43, 
       #8f065a, 
-      #f1eefd, 
-      #ab90f0
+      hsl(290, 62%, 41%), 
+      #9f7afd
     );
     background-size: 400% 400%;
-    animation: gradientFlow 15s ease infinite;
-    color: #ffffff;
+    animation: gradientFlow 5s ease infinite;
+    color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   

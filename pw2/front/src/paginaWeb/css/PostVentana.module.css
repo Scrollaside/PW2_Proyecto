@@ -77,7 +77,8 @@
 #recomm,
 #recents {
   font-weight: bold;
-  background-color: #E4AF9E;
+  background-color: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
   padding: 10px;
   /* Agrega un poco de espacio entre el contenido y el borde */
@@ -148,9 +149,10 @@
   align-items: center; /* Centra verticalmente los elementos */
 }
 #addInfo {
-  background-color: #E4AF9E; /* Establece el color de fondo del texto */
-  padding: 5px; /* Añade un espacio alrededor del texto */
-  margin-left: 10px; /* Añade un margen a la izquierda para separar el texto de la imagen */
+  background-color: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 10px; /* Añade un espacio alrededor del texto */
+  margin-left: 50px; /* Añade un margen a la izquierda para separar el texto de la imagen */
   border-radius: 20px; /* Agrega esquinas redondeadas al contenedor del texto */
   display: flex; /* Utiliza flexbox para colocar elementos en la misma fila */
   align-items: center; /* Centra verticalmente los elementos */
@@ -178,7 +180,8 @@
   margin-right: 30px;
   width: 150px;
   height: auto;
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
 }
 #commentsContainer {
@@ -187,18 +190,32 @@
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 
-  background-color: #E4AF9E;
+  background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
   padding: 10px;
   /* Agrega un poco de espacio entre el contenido y el borde */
   margin-bottom: 20px;
 }
+
 #commentForm button{
-  color: #E4AF9E; /* Establece el color de fondo del texto */
-  background-color: #f0f0f0;
-  border-radius: 10px;
-  border: none;
+  background-color: #8f065a;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+      margin-bottom: 20px;
 }
+
+#commentForm button:hover {
+    background-color: #ab90f0;
+      color: #2b013b;
+      transform: scale(1.1);
+}
+
 #commentError{
   color: rgb(210, 115, 115);
 }
@@ -213,7 +230,7 @@
   margin: 5px;
   border-radius: 20px;
   display: inline-block;
-  background-color: #f0f0f0;
+  color:#ab90f0;
   font-size: 20px;
   padding: 10px;
   /* Añade un poco de espacio entre el texto y el borde */
@@ -235,7 +252,8 @@
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 
-  background-color: #E4AF9E;
+  background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
   padding: 10px;
   /* Agrega un poco de espacio entre el contenido y el borde */
@@ -257,7 +275,8 @@
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 
-  background-color: #E4AF9E;
+  background-color: rgba(255, 255, 255, 0.13);
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
   padding: 10px;
   /* Agrega un poco de espacio entre el contenido y el borde */

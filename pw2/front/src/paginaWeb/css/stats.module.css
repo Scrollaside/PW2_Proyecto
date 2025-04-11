@@ -50,7 +50,7 @@
 
 /* Estilo personalizado para las estadisticas */
 .chartContainer {
-    background-color: rgb(238, 174, 153);
+    background-color: rgba(238, 174, 153, 0.562);
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
@@ -59,21 +59,53 @@
 
 
 .buttonPrimary {
-    background-color: rgb(238, 174, 153);
-    color: white;
-    border: none;
+    background-color: #8f065a;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.buttonPrimary:hover {
+    background-color: #ab90f0;
+      color: #2b013b;
+      transform: scale(1.1);
 }
 
 .buttonSecondary {
-    background-color: gainsboro;
-    color: white;
-    border: none;
+    background-color: #ab90f0;
+      color: #2b013b;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
 }
 
+.buttonSecondary:hover {
+    transform: scale(1.1);
+}
+
+
 .buttonSuccess {
-    background-color: rgb(238, 174, 153);
-    color: white;
-    border: none;
+    background-color: #8f065a;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.buttonSuccess:hover {
+    background-color: #ab90f0;
+      color: #2b013b;
+      transform: scale(1.1);
 }
 
 

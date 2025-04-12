@@ -63,7 +63,7 @@ const InicioSesion = () => {
                     <input type="password" placeholder="Password" value={pass} onChange={(e) => setPass(e.target.value)} required />
                     <button type="submit">Sign In</button>
                     <p className="text-white">Don't have an account?
-                        <Link to="/register">Sign Up</Link>
+                        <Link to="/registro">Sign Up</Link>
                     </p>
                 </form>
             </div>

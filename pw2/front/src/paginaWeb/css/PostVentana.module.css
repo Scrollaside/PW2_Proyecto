@@ -77,7 +77,7 @@
 #recomm,
 #recents {
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
   padding: 10px;
@@ -149,7 +149,7 @@
   align-items: center; /* Centra verticalmente los elementos */
 }
 #addInfo {
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   padding: 10px; /* Añade un espacio alrededor del texto */
   margin-left: 50px; /* Añade un margen a la izquierda para separar el texto de la imagen */
@@ -180,7 +180,7 @@
   margin-right: 30px;
   width: 150px;
   height: auto;
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
 }
@@ -190,7 +190,7 @@
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
   padding: 10px;
@@ -252,7 +252,7 @@
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
   padding: 10px;
@@ -275,7 +275,7 @@
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 
-  background-color: rgba(255, 255, 255, 0.13);
+  background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
   border-radius: 20px;
   padding: 10px;

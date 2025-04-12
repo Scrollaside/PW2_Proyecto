@@ -6,8 +6,8 @@ INSERT INTO usuario (nombre_usuario, nickname_usuario, foto_usuario, desc_usuari
 ('User Test One', 'UserTest01', 0, 'User Description', 'email@mail.com', 'Userpass1!');
 
 INSERT INTO usuario (foto_usuario, nombre_usuario, nickname_usuario, desc_usuario, email_usuario, contrasenia_usuario) VALUES 
-(0, 'Danny B.', 'moshiOnO', 'Me gusta comer xD', 'moshiuwu@uanl.edu.mx', 'mipapáesfox#20'),
-(0, 'Prueba Es mi Nombre', 'prueba', 'soy una prueba', NULL, 'prueba'),
+(0, 'Danny B.', 'moshiOnO', 'Me gusta comer', 'moshiuwu@uanl.edu.mx', 'fox#20'),
+(0, 'Prueba Nombre', 'prueba', 'soy una prueba', NULL, 'prueba'),
 (0, 'Sei', 'seis', 'soy el usuario seis', NULL, 'seis'),
 (0, NULL, 'pro2', NULL, NULL, NULL),
 (0, 'Sonic is my Name', 'TheBlueH', 'I like CHili dogs and minecraft :3', 'sonic@gmail.com', 'Contraseña#20');
@@ -17,8 +17,8 @@ INSERT INTO usuario (foto_usuario, nombre_usuario, nickname_usuario, desc_usuari
 
 INSERT INTO publicacion (id_post, id_autor, titulo_post, desc_post, fecha_post, foto_post) VALUES 
 (1, 1, 'March 7th', 'OMG, just starting playing HSR and i LOVE this living protogem', '2017-05-17 20:47:09', 0),
-(5, 1, 'Yanfo', 'Vete alaberga, me llevo como 30 min acabar esta wea conchetumadre, pero como la amo uwu', '2024-05-18 14:18:18', 0),
-(6, 6, 'Uraraka sketchie', 'Un skecth rapidito que hice', '2024-05-17 15:32:59', 0),
+(5, 1, 'Yanfo', 'Me llevo como 30 min acabar esto, pero como la amo uwu', '2024-05-18 14:18:18', 0),
+(6, 6, 'Uraraka sketchie', 'Un skecth rapido que hice', '2024-05-17 15:32:59', 0),
 (8, 1, 'Hu TAOOOOOOOO', 'Como quiero a la Hu tao', '2024-05-18 14:27:16', 0),
 (9, 6, 'Makoto Yuki', 'March 5th ....', '2024-05-19 14:37:17', 0);
 
@@ -46,10 +46,10 @@ INSERT INTO comentario (id_comm, id_usuario, desc_comm, fecha_comm) VALUES
 (1, 1, 'Holaaaaa', '2024-05-15 16:43:25'),
 (6, 1, 'asdsd', NULL),
 (7, 1, 'ala', NULL),
-(8, 1, 'este comentario tendrá una cantidad excesiva de texto xD', NULL),
-(9, 6, 'Ta bien bonita tu yanfooooo', NULL),
-(10, 6, 'Mucho texto, ya kys', NULL),
-(11, 1, 'Holi, primer comentario', NULL);
+(8, 1, 'este comentario tendrá una cantidad excesiva de texto ', NULL),
+(9, 6, 'Esta muy bonita tu yanfooooo', NULL),
+(10, 6, 'Mucho texto', NULL),
+(11, 1, 'Hola, primer comentario', NULL);
 
 
 -- TRUNCATE TABLE follow --

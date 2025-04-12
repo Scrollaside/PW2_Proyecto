@@ -12,10 +12,10 @@ function Menu({ perfil }) {
                     <Link className={`${styles["nav-link"]} nav-link`} to="/dashboard">Inicio</Link>
                 </li>
                 <li className={`${styles["nav-item"]}`}>
-                    <Link className={`${styles["nav-link"]} nav-link`} to="/explore">Explorar</Link>
+                    <Link className={`${styles["nav-link"]} nav-link`} to="/explorar">Explorar</Link>
                 </li>
                 <li className={`${styles["nav-item"]}`}>
-                    <Link className={`${styles["nav-link"]} nav-link`} to="/createpost">Crear</Link>
+                    <Link className={`${styles["nav-link"]} nav-link`} to="/crearpost">Crear</Link>
                 </li>
                 <li className={`${styles["nav-item"]}`}>
                     <Link to={`/perfil/${perfil.ID}`} >

@@ -73,7 +73,7 @@
     /* Agrega un poco de espacio entre el contenido y el borde */
     margin-bottom: 28px;
     /* Quita el borde */
-    background-color: rgba(255, 255, 255, 0.13);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     border: 1px solid #dee2e6;
 }
@@ -84,7 +84,7 @@
     /* Agrega un poco de espacio entre el contenido y el borde */
     margin-bottom: 28px;
     /* Quita el borde */
-    background-color: rgba(255, 255, 255, 0.13);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     border: 1px solid #dee2e6;
 }
@@ -95,7 +95,7 @@
     /* Agrega un poco de espacio entre el contenido y el borde */
     margin-bottom: 28px;
     /* Quita el borde */
-    background-color: rgba(255, 255, 255, 0.13);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     border: 1px solid #dee2e6;
 }

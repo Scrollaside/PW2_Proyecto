@@ -76,7 +76,7 @@
 
 #pubpfp {
     /* Personalización del contenedor */
-    background-color: rgba(255, 255, 255, 0.13);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 20px;
     /* Espaciado interno */
@@ -140,7 +140,7 @@
 /* Personalización de la info del usuario */
 #pfn {
     /* Personalización del contenedor */
-    background-color: rgba(255, 255, 255, 0.13);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 20px;
     /* Espaciado interno */
@@ -155,7 +155,7 @@
 
 #pfp {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.13);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
     padding: 20px;
     /* Espaciado interno */

@@ -48,6 +48,18 @@ function Publicacion() {
                                 <span id={styles.followIcon} className="ml-2">{followed ? '✓' : '×'}</span>
                             </button>
                         </div>
+
+                       
+                        <form id={styles.commentForm} onSubmit={(e) => handleFormSubmit(e, id_post)}>
+                            <div className="form-group">
+                                <label htmlFor="commentText">Agregar comentario:</label>
+                                <textarea className="form-control" id="commentText" rows="3" value={commentText} onChange={(e) => setCommentText(e.target.value)}></textarea>
+                                <span id={styles.commentError} className="error-text" style={{ display: commentError ? 'inline' : 'none' }}>{commentError}</span>
+                            </div>
+                            
+                            <button type="submit" className="btn btn-primary">Enviar comentario</button>
+                        </form>
+                        
                     </div>
 
                     <div className="col-md-1">
@@ -71,14 +83,7 @@ function Publicacion() {
 
                         <Comentarios comentarios={publicacion.comentarios} />
 
-                        <form id={styles.commentForm} onSubmit={(e) => handleFormSubmit(e, id_post)}>
-                            <div className="form-group">
-                                <label htmlFor="commentText">Agregar comentario:</label>
-                                <textarea className="form-control" id="commentText" rows="3" value={commentText} onChange={(e) => setCommentText(e.target.value)}></textarea>
-                                <span id={styles.commentError} className="error-text" style={{ display: commentError ? 'inline' : 'none' }}>{commentError}</span>
-                            </div>
-                            <button type="submit" className="btn btn-primary">Enviar comentario</button>
-                        </form>
+                        
 
                         <div id={styles.catP}>
                             {publicacion.categorias && publicacion.categorias.map((cat, index) => (

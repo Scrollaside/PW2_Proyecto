@@ -48,17 +48,21 @@ function Publicacion() {
                                 <span id={styles.followIcon} className="ml-2">{followed ? '✓' : '×'}</span>
                             </button>
                         </div>
-
-                       
+                        <p></p>
+                        <p></p>
+                       <div className='container-coment'>
                         <form id={styles.commentForm} onSubmit={(e) => handleFormSubmit(e, id_post)}>
                             <div className="form-group">
                                 <label htmlFor="commentText">Agregar comentario:</label>
                                 <textarea className="form-control" id="commentText" rows="3" value={commentText} onChange={(e) => setCommentText(e.target.value)}></textarea>
                                 <span id={styles.commentError} className="error-text" style={{ display: commentError ? 'inline' : 'none' }}>{commentError}</span>
                             </div>
-                            
-                            <button type="submit" className="btn btn-primary">Enviar comentario</button>
+                            <p></p>
+                            <div className='btn-enviar'>
+                             <button type="submit" className="btn btn-primary">Enviar comentario</button>
+                            </div>
                         </form>
+                       </div>
                         
                     </div>
 
@@ -76,7 +80,7 @@ function Publicacion() {
                             </button>
                         </div>
                     </div>
-
+                    
                     <div id={styles.postInfo} className="col-md-3">
                         <h2 id={styles.titleP}>{publicacion.titulo_post}</h2>
                         <p id={styles.descP}>{publicacion.desc_post}</p>

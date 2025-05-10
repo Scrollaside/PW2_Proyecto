@@ -180,13 +180,11 @@
   margin-right: 30px;
   width: 150px;
   height: auto;
-  background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-  border-radius: 20px;
+  
 }
 #commentsContainer {
   width: 320px;
-  height: 200px;
+  height: 500px;
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 
@@ -195,8 +193,10 @@
   border-radius: 20px;
   padding: 10px;
   /* Agrega un poco de espacio entre el contenido y el borde */
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
+
+
 
 #commentForm button{
   background-color: #8f065a;
@@ -207,8 +207,8 @@
       border-radius: 8px;
       cursor: pointer;
       transition: transform 0.3s ease, background 0.3s ease;
-      margin-bottom: 20px;
-      margin-bottom: 20px;
+
+
 }
 
 #commentForm button:hover {
@@ -216,6 +216,7 @@
       color: #2b013b;
       transform: scale(1.1);
 }
+
 
 #commentError{
   color: rgb(210, 115, 115);

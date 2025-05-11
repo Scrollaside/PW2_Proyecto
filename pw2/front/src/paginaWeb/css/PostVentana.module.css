@@ -182,6 +182,10 @@
   height: auto;
   
 }
+
+#username {
+  color: red;
+}
 #commentsContainer {
   width: 320px;
   height: 500px;

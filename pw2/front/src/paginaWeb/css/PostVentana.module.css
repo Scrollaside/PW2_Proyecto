@@ -259,10 +259,21 @@
   /* Establece el ancho máximo al 100% del contenedor */
   height: 180px;
 }
+
+#recomm{
+  color: #f1eefd;
+  background-color: #2b013b;
+  border-radius: 50px;
+  
+}
+
+
+
 #recommContainer {
-  width: 340px;
+  width: 500px;
   height: 400px;
   overflow-y: auto;
+  justify-content: center;
   /* Barra de desplazamiento vertical */
 
   background-color: rgba(255, 255, 255, 0.5);
@@ -270,7 +281,7 @@
   border-radius: 20px;
   padding: 10px;
   /* Agrega un poco de espacio entre el contenido y el borde */
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 #rectP img {
@@ -282,9 +293,16 @@
   /* Establece el ancho máximo al 100% del contenedor */
   height: 180px;
 }
+
+#recents{
+  color: #f1eefd;
+  background-color: #2b013b;
+  border-radius: 50px;
+}
+
 #recentContainer {
-  width: 340px;
-  height: 250px;
+  width: 500px;
+  height: 300px;
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 

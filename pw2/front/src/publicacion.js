@@ -50,6 +50,8 @@ function Publicacion() {
                         </div>
                         <p></p>
                         <p></p>
+                        <p></p>
+                        <p></p>
                        <div className='container-coment'>
                         <form id={styles.commentForm} onSubmit={(e) => handleFormSubmit(e, id_post)}>
                             <div className="form-group">

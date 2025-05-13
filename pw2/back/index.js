@@ -43,12 +43,28 @@ app.get('/', (req, res) => {
     res.send('Hola');
 });
 
+//
+const hostname = "flava.h.filess.io";
+const database = "pw2_gameround";
+const port = "3307";
+const username = "pw2_gameround";
+const password = "MYSQLpass";
+//
+
 const db = mysql.createConnection(
     {
-        host: "localhost",
-        user: "root",
-        password: "MYSQLpass", //cambiar a la contraseña de su base de datos
-        database: "pw2"
+        // host: "localhost",
+        // user: "root",
+        // password: "MYSQLpass", //cambiar a la contraseña de su base de datos
+        // database: "pw2"
+
+        //
+        host: hostname,
+        user: username,
+        password: password,
+        database: database,
+        port: port
+    //
     }
 )
 

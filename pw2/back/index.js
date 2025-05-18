@@ -195,7 +195,9 @@ app.get("/perfilMenu", verificarSesion, (req, res) => {
                 res.status(404).send("Usuario no encontrado.");
             }
         });
-    } 
+    } else {
+        res.status(401).send("Usuario no autenticado.");
+    }
 });
 
 

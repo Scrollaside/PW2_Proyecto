@@ -15,7 +15,7 @@ function Dashboard() {
     const perfil = usePerfil();    
 
     useEffect(() => {
-        axiosInstance.get("http://localhost:3001/getufollowed")
+        axiosInstance.get("/getufollowed")
             .then((response) => {
                 if (response.data === "No imagen") {
                     alert("No hay imágenes");

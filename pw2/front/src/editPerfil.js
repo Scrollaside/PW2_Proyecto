@@ -89,7 +89,7 @@ function Editperfil() {
                 console.log(pair[0] + ': ' + pair[1]);
             }
 
-            axiosInstance.put('http://localhost:3001/actualizarPerfil', formDataToSend, {
+            axiosInstance.put('/actualizarPerfil', formDataToSend, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

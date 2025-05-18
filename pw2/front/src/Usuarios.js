@@ -6,14 +6,14 @@ function Usuarios() {
     const[userList, setUList] = useState([]);
 
     const get = () =>{
-        Axios.get("http://localhost:3001/getU",{
+        Axios.get("/getU",{
         }).then((resp)=>{
             setUList(resp.data);
         })
     }
 
     const del = (nomUD) =>{
-        Axios.delete(`http://localhost:3001/delete/${nomUD}`,{
+        Axios.delete(`/delete/${nomUD}`,{
         }).then(()=>{
             alert("informaión enviada");
         })

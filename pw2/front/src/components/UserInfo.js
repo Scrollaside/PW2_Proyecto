@@ -10,7 +10,7 @@ const UserInfo = ({ profile, loggedInUserId }) => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        axiosInstance.post('http://localhost:3001/logout')
+        axiosInstance.post('/logout')
             .then(() => {
                 Swal.fire(
                     'Cuídate y toma agua ' + profile.nickname + '!',

@@ -7,7 +7,7 @@ const session = require('express-session');
 
 app.use(cors({
     // origin: 'http://localhost:3000', // Ajusta esto al puerto donde corre tu React app
-    origin: 'com.mysql.jdbc.Driver',
+    origin: 'https://webart-t0sn.onrender.com',
     credentials: true // Permitir el envío de cookies
 }));
 app.use(express.json());

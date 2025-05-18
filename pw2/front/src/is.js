@@ -11,7 +11,7 @@ const InicioSesion = () => {
     useEffect(() => {
         const verificarSesion = async () => {
             try {
-                const response = await axiosInstance.get('https://pw2-proyecto.onrender.com/perfilMenu');
+                const response = await axiosInstance.get('/perfilMenu');
                 if (response.status === 200) {
                     nav('/Dashboard');
                 }

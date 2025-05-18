@@ -15,7 +15,7 @@ function Dashboard() {
     const perfil = usePerfil();    
 
     useEffect(() => {
-        axiosInstance.get("https://pw2-proyecto.onrender.com/getufollowed")
+        axiosInstance.get("/getufollowed")
             .then((response) => {
                 if (response.data === "No imagen") {
                     alert("No hay imágenes");

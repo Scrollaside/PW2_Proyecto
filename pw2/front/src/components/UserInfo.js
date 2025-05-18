@@ -10,7 +10,7 @@ const UserInfo = ({ profile, loggedInUserId }) => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        axiosInstance.post('/logout')
+        axiosInstance.post('https://pw2-proyecto.onrender.com/logout')
             .then(() => {
                 Swal.fire(
                     'Cuídate y toma agua ' + profile.nickname + '!',

@@ -10,7 +10,7 @@ function CargarImagen() {
 
     //Obtiene valores de las fotos
     useEffect(() => {
-        Axios.get("/getAllImg")
+        Axios.get("https://pw2-proyecto.onrender.com/getAllImg")
             .then((response) => {
                 if (response.data === "No imagen") {
                     alert("No hay imágenes");
@@ -58,13 +58,13 @@ function CargarImagen() {
         frmData.append("file", archivo);
         frmData.append("user", user);
 
-        Axios.post("/file", frmData, {
+        Axios.post("https://pw2-proyecto.onrender.com/file", frmData, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })
             .then((response) => {
                 if (response.data.alert === "Success") {
                     // Una vez que la imagen se ha subido exitosamente, puedes recargar la lista de imágenes
-                    Axios.get("/getAllImg")
+                    Axios.get("https://pw2-proyecto.onrender.com/getAllImg")
                         .then((response) => {
                             if (response.data === "No imagen") {
                                 alert("No hay imágenes");

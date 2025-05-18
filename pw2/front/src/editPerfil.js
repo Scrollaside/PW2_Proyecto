@@ -89,7 +89,7 @@ function Editperfil() {
                 console.log(pair[0] + ': ' + pair[1]);
             }
 
-            axiosInstance.put('/actualizarPerfil', formDataToSend, {
+            axiosInstance.put('https://pw2-proyecto.onrender.com/actualizarPerfil', formDataToSend, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

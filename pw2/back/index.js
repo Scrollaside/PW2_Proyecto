@@ -16,6 +16,7 @@ app.use(cors({
     credentials: true // Permitir el envío de cookies
 }));
 app.use(express.json());
+
 //Session
 app.use(session({
     secret: 'secret_key',
@@ -31,6 +32,10 @@ app.use(session({
     name: 'id_usuario'
 }));
 
+app.use((req, res, next) => {
+    console.log("Session Data:", req.session);
+    next();
+});
 
 //Verificar sesión existente
 function verificarSesion(req, res, next) {

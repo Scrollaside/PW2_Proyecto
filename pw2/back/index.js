@@ -25,8 +25,8 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
         secure: false, // Usar `true` sólo en producción con HTTPS
-        httpOnly: true,
-        samesite: "none"
+        //httpOnly: true,
+        samesite: 'none'
         //maxAge: 1000 * 60 * 60 * 24 // Cookie válida por un día
     },
     name: 'id_usuario'

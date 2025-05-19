@@ -4,6 +4,11 @@ const mysql = require('mysql');
 const cors = require('cors');
 const multer = require('multer');
 const session = require('express-session');
+const RedisStore = require("connect-redis").default;
+const redis = require("redis");
+
+const redisClient = redis.createClient({ url: process.env.VALKEY_URL });
+
 
 app.use(cors({
     // origin: 'http://localhost:3000', // Ajusta esto al puerto donde corre tu React app
@@ -14,12 +19,14 @@ app.use(express.json());
 //Session
 app.use(session({
     secret: 'secret_key',
+    store: new RedisStore({ client: redisClient }),
     resave: false,
     saveUninitialized: false,
     cookie: {
         secure: false, // Usar `true` sólo en producción con HTTPS
         httpOnly: true,
-        maxAge: 1000 * 60 * 60 * 24 // Cookie válida por un día
+        samesite: "none"
+        //maxAge: 1000 * 60 * 60 * 24 // Cookie válida por un día
     },
     name: 'id_usuario'
 }));
@@ -59,13 +66,13 @@ const db = mysql.createConnection(
         // password: "MYSQLpass", 
         // database: "pw2"
 
-        //
+        
         host: hostname,
         user: username,
         password: password,
         database: database,
         port: port
-        //
+        
     }
 )
 

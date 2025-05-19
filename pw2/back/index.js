@@ -24,18 +24,13 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        secure: false, // Usar `true` sólo en producción con HTTPS
+        secure: true, // Usar `true` sólo en producción con HTTPS
         //httpOnly: true,
         samesite: 'none'
         //maxAge: 1000 * 60 * 60 * 24 // Cookie válida por un día
     },
     name: 'id_usuario'
 }));
-
-app.use((req, res, next) => {
-    console.log("Session Data:", req.session);
-    next();
-});
 
 //Verificar sesión existente
 function verificarSesion(req, res, next) {
@@ -186,6 +181,7 @@ app.post("/login", (req, resp) => {
 
 // Obtener info general del usuario para el menú
 app.get("/perfilMenu", verificarSesion, (req, res) => {
+    console.log("Session userId:", req.session.userId); // <-- Agrega esto
     const userId = req.session.userId;
     if (userId) {
         db.query("SELECT * FROM usuario WHERE id_usuario = ?", [userId], (err, result) => {

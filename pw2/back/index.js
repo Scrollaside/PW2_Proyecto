@@ -4,10 +4,10 @@ const mysql = require('mysql');
 const cors = require('cors');
 const multer = require('multer');
 const session = require('express-session');
-const RedisStore = require("connect-redis").default;
-const redis = require("redis");
+// const RedisStore = require("connect-redis").default;
+// const redis = require("redis");
 
-const redisClient = redis.createClient({ url: process.env.VALKEY_URL });
+// const redisClient = redis.createClient({ url: process.env.VALKEY_URL });
 
 
 app.use(cors({
@@ -19,7 +19,7 @@ app.use(express.json());
 //Session
 app.use(session({
     secret: 'secret_key',
-    store: new RedisStore({ client: redisClient }),
+    // store: new RedisStore({ client: redisClient }),
     resave: false,
     saveUninitialized: false,
     cookie: {

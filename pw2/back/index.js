@@ -181,7 +181,6 @@ app.post("/login", (req, resp) => {
 
 // Obtener info general del usuario para el menú
 app.get("/perfilMenu", verificarSesion, (req, res) => {
-    console.log("Session userId:", req.session.userId); // <-- Agrega esto
     const userId = req.session.userId;
     if (userId) {
         db.query("SELECT * FROM usuario WHERE id_usuario = ?", [userId], (err, result) => {

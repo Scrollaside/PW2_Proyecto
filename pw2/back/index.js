@@ -6,7 +6,7 @@ const multer = require('multer');
 const session = require('express-session');
 
 const { createClient } = require('redis');
-const RedisStore = require('connect-redis').default;
+const RedisStore = require('connect-redis')(session);
 
 const redisClient = createClient({ url: process.env.VALKEY_URL });
 redisClient.connect().catch(console.error);

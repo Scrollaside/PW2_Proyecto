@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const mysql = require('mysql');
 const cors = require('cors');
+const mysql = require('mysql');
 const multer = require('multer');
 const session = require('express-session');
 // const RedisStore = require("connect-redis").default;
@@ -24,8 +24,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        secure: true, // Usar `true` sólo en producción con HTTPS
-        //httpOnly: true,
+        secure: true,
         samesite: 'none'
         //maxAge: 1000 * 60 * 60 * 24 // Cookie válida por un día
     },
@@ -46,7 +45,6 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Listening Port ${PORT}`);
 });
-
 app.get('/', (req, res) => {
     res.send('Hola');
 });

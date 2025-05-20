@@ -11,7 +11,7 @@ const InicioSesion = () => {
     useEffect(() => {
         const verificarSesion = async () => {
             try {
-                const response = await axiosInstance.get('/perfilMenu');
+                const response = await axiosInstance.get('/perfilMenu', {withCredentials: true});
                 if (response.status === 200) {
                     nav('/Dashboard');
                 }

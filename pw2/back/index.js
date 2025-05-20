@@ -5,6 +5,7 @@ const session = require('express-session');
 const { createClient } = require('redis');
 const RedisStore = require('connect-redis')(session);
 const mysql = require('mysql');
+const multer = require('multer');
 
 app.use(cors({
     origin: 'https://webart-t0sn.onrender.com',

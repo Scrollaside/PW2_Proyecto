@@ -5,6 +5,15 @@ const cors = require('cors');
 const multer = require('multer');
 const session = require('express-session');
 
+app.use(cors({
+    // origin: 'http://localhost:3000', // Ajusta esto al puerto donde corre tu React app
+    origin: 'https://webart-t0sn.onrender.com',
+    credentials: true // Permitir el envío de cookies
+}));
+app.use(express.json());
+
+
+
 const { createClient } = require('redis');
 const RedisStore = require('connect-redis')(session);
 
@@ -12,12 +21,7 @@ const redisClient = createClient({ url: process.env.VALKEY_URL });
 redisClient.connect().catch(console.error);
 
 
-app.use(cors({
-    // origin: 'http://localhost:3000', // Ajusta esto al puerto donde corre tu React app
-    origin: 'https://webart-t0sn.onrender.com',
-    credentials: true // Permitir el envío de cookies
-}));
-app.use(express.json());
+
 
 //Session
 app.use(session({
@@ -44,11 +48,10 @@ function verificarSesion(req, res, next) {
 }
 
 //Configuración del servidor
-app.listen(3001,
-    () => {
-        console.log("Listening Port 3001");
-    }
-)
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Listening Port ${PORT}`);
+});
 app.get('/', (req, res) => {
     res.send('Hola');
 });

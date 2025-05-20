@@ -8,7 +8,7 @@ const session = require('express-session');
 const { createClient } = require('redis');
 const RedisStore = require('connect-redis').default;
 
-const redisClient = createClient({ url: 'redis://red-d0l72rvfte5s7398ngvg:6379' });
+const redisClient = createClient({ url: process.env.VALKEY_URL });
 redisClient.connect().catch(console.error);
 
 

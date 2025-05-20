@@ -42,11 +42,11 @@ function verificarSesion(req, res, next) {
 }
 
 //Configuración del servidor
-app.listen(3001,
-    () => {
-        console.log("Listening Port 3001");
-    }
-)
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Listening Port ${PORT}`);
+});
+
 app.get('/', (req, res) => {
     res.send('Hola');
 });

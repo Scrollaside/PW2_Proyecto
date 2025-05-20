@@ -28,7 +28,7 @@ app.use(session({
         samesite: 'none'
         //maxAge: 1000 * 60 * 60 * 24 // Cookie válida por un día
     },
-    name: 'id_usuario'
+    // name: 'connect.sid'
 }));
 
 //Verificar sesión existente
@@ -92,7 +92,7 @@ const upload = multer({
 })
 
 
-//******************************Inicio y registro de sesión ************************
+//******************************Inicio y coregistro de sesión ************************
 // Modifica la ruta "/registro" para incluir el apodo (nickname) del usuario
 // app.post("/registro", redirigirSiAutenticado, (req, res) => {
 //     const { name, nickN, mail, pass } = req.body;
@@ -142,10 +142,10 @@ app.post("/create", (req, resp) => {
                         } else {
                             const userId = data.insertId;  // Usar data.insertId para obtener el ID del nuevo usuario
                             req.session.userId = userId;
-                            resp.cookie('id_usuario', userId, {
-                                httpOnly: true,
-                                maxAge: 1000 * 60 * 60 * 24 // 1 día
-                            });
+                            // resp.cookie('id_usuario', userId, {
+                            //     httpOnly: true,
+                            //     maxAge: 1000 * 60 * 60 * 24 // 1 día
+                            // });
                             resp.status(201).send("Usuario registrado exitosamente");
                         }
                     }

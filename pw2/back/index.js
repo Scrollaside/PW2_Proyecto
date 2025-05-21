@@ -8,7 +8,7 @@ const session = require('express-session');
 // const redis = require("redis");
 
 // const redisClient = redis.createClient({ url: process.env.VALKEY_URL });
-
+app.set('trust proxy', 1); // Trust first proxy
 
 app.use(cors({
     // origin: 'http://localhost:3000', // Ajusta esto al puerto donde corre tu React app

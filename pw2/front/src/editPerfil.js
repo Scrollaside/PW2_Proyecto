@@ -99,7 +99,7 @@ function Editperfil() {
                         title: 'Tu perfil se modificó con éxito',
                         text: '<3',
                         icon: 'success',
-                        confirmButtonText: 'Yeiiiiii :DD'
+                        confirmButtonText: 'Confirmar'
                     }).then((result) => {
                         if (result.isConfirmed) {
                             nav('/dashboard');

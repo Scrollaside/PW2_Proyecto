@@ -6,14 +6,14 @@ function Usuarios() {
     const[userList, setUList] = useState([]);
 
     const get = () =>{
-        Axios.get("https://pw2-proyecto.onrender.com/getU",{
+        Axios.get("/getU",{
         }).then((resp)=>{
             setUList(resp.data);
         })
     }
 
     const del = (nomUD) =>{
-        Axios.delete(`https://pw2-proyecto.onrender.com/delete/${nomUD}`,{
+        Axios.delete(`/delete/${nomUD}`,{
         }).then(()=>{
             alert("informaión enviada");
         })

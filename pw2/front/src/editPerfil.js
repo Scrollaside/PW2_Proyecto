@@ -89,7 +89,7 @@ function Editperfil() {
                 console.log(pair[0] + ': ' + pair[1]);
             }
 
-            axiosInstance.put('/actualizarPerfil', formDataToSend, {
+            axiosInstance.put('https://back.pw2proyect.infinityfreeapp.com/actualizarPerfil', formDataToSend, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

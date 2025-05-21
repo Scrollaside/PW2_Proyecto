@@ -5,9 +5,12 @@ body {
     padding: 0;
     min-height: 100vh;
     background: linear-gradient(135deg,  
+      #601744, 
+      hsl(325, 49%, 29%), 
+      /* #a26d8e
       #8f065a, 
       hsl(325, 62%, 41%), 
-      #fd7acb
+      #fd7acb */
     );
     background-size: 400% 400%;
     animation: gradientFlow 15s ease infinite;

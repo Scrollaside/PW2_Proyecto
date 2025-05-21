@@ -99,7 +99,7 @@ const Registro = () => {
     }
 
     try {
-      const response = await axiosInstance.post('https://front.webart.infinityfreeapp.com/create', {
+      const response = await axiosInstance.post('/create', {
         usuario: name,
         apodo: nickN, // Agregar el apodo (nickname) al objeto enviado al servidor
         correo: mail,

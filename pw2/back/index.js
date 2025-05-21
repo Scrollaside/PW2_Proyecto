@@ -28,7 +28,7 @@ app.use(session({
         samesite: 'none'
         //maxAge: 1000 * 60 * 60 * 24 // Cookie válida por un día
     },
-    // name: 'connect.sid'
+    name: 'id_usuario'
 }));
 
 //Verificar sesión existente

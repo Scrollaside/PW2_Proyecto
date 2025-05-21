@@ -23,7 +23,7 @@ function Explore() {
 
     //Obtiene valores de las fotos y demás cosas de la base de datos
     useEffect(() => {
-        axiosInstance.get("https://back.pw2proyect.infinityfreeapp.com/getnewtoold")
+        axiosInstance.get("/getnewtoold")
             .then((response) => {
                 if (response.data === "No imagen") {
                     alert("No hay imágenes");

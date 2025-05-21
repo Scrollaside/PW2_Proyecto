@@ -6,14 +6,14 @@ function Usuarios() {
     const[userList, setUList] = useState([]);
 
     const get = () =>{
-        Axios.get("https://back.pw2proyect.infinityfreeapp.com/getU",{
+        Axios.get("/getU",{
         }).then((resp)=>{
             setUList(resp.data);
         })
     }
 
     const del = (nomUD) =>{
-        Axios.delete(`https://back.pw2proyect.infinityfreeapp.com/delete/${nomUD}`,{
+        Axios.delete(`/delete/${nomUD}`,{
         }).then(()=>{
             alert("informaión enviada");
         })

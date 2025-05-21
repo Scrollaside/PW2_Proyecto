@@ -10,7 +10,7 @@ const UserInfo = ({ profile, loggedInUserId }) => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        axiosInstance.post('https://back.pw2proyect.infinityfreeapp.com/logout')
+        axiosInstance.post('/logout')
             .then(() => {
                 Swal.fire(
                     'Cuídate y toma agua ' + profile.nickname + '!',

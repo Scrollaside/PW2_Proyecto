@@ -10,7 +10,7 @@ function CargarImagen() {
 
     //Obtiene valores de las fotos
     useEffect(() => {
-        Axios.get("https://back.pw2proyect.infinityfreeapp.com/getAllImg")
+        Axios.get("/getAllImg")
             .then((response) => {
                 if (response.data === "No imagen") {
                     alert("No hay imágenes");
@@ -58,13 +58,13 @@ function CargarImagen() {
         frmData.append("file", archivo);
         frmData.append("user", user);
 
-        Axios.post("https://back.pw2proyect.infinityfreeapp.com/file", frmData, {
+        Axios.post("/file", frmData, {
             headers: { 'Content-Type': 'multipart/form-data' }
         })
             .then((response) => {
                 if (response.data.alert === "Success") {
                     // Una vez que la imagen se ha subido exitosamente, puedes recargar la lista de imágenes
-                    Axios.get("https://back.pw2proyect.infinityfreeapp.com/getAllImg")
+                    Axios.get("/getAllImg")
                         .then((response) => {
                             if (response.data === "No imagen") {
                                 alert("No hay imágenes");

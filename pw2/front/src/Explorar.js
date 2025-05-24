@@ -18,6 +18,10 @@ function Explore() {
     const [allImg, setAllImg] = useState([]);
     const [base64Images, setBase64Images] = useState([]);
 
+    const [categorias, setCategorias] = useState([]);
+    const [selectedCat, setSelectedCat] = useState(""); // Estado para el filtro de categoría
+
+
     const perfil = usePerfil(); 
 
 
@@ -36,6 +40,22 @@ function Explore() {
                 console.error("Error fetching images:", error);
             });
     }, []);
+
+    // Cargar categorías al montar
+    useEffect(() => {
+        axiosInstance.get("/categorias")
+            .then((response) => {
+                setCategorias(response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching categories:", error);
+            });
+    }, []);
+
+
+
+
+
     //Conversion de los valores a un base64
     useEffect(() => {
         const convertImagesToBase64 = async () => {
@@ -81,35 +101,63 @@ function Explore() {
     }, [allImg]);
 
 
+const [publicaciones, setPublicaciones] = useState([]);
 
 
-    return (
-        <>
-
-            {/* <!-- Menú del apartado superior --> */}
-            {/* // Usando el componente del Menú */}
-            <Menu perfil={perfil} /> 
-
-            {/* Renderiza el contenedor de tarjetas con los datos */}
-            <CardContainer data=
-                {base64Images.map((base64String, index) =>
-                (
-                    {
-                        imageUrl: base64String,
-                        title: allImg[0][index].titulo_post,
-                        idPost: allImg[0][index].id_post
-                    }
-                ))
+// Cuando allImg cambia, obtén las categorías de cada publicación
+useEffect(() => {
+    const fetchPublicacionesConCategorias = async () => {
+        if (allImg.length > 0 && Array.isArray(allImg[0])) {
+            const publicacionesPromises = allImg[0].map(async (pub) => {
+                try {
+                    const res = await axiosInstance.get(`http://localhost:3001/publicacion/${pub.id_post}`);
+                    return {
+                        ...pub,
+                        categorias: res.data.categorias // array de strings
+                    };
+                } catch (error) {
+                    return { ...pub, categorias: [] };
                 }
-            />
+            });
+            const pubs = await Promise.all(publicacionesPromises);
+            setPublicaciones(pubs);
+        }
+    };
+    fetchPublicacionesConCategorias();
+}, [allImg]);
 
+const publicacionesFiltradas = selectedCat
+    ? publicaciones.filter(pub => pub.categorias && pub.categorias.includes(selectedCat))
+    : publicaciones;
 
+return (
+    <>
+        <Menu perfil={perfil} />
 
-        </>
+        {/* Dropdown de categorías */}
+        <div className="container my-3">
+            <select
+                className="form-select"
+                value={selectedCat}
+                onChange={e => setSelectedCat(e.target.value)}
+            >
+                <option value="">Todas las categorías</option>
+                {categorias.map(cat => (
+                    <option key={cat.id} value={cat.name}>{cat.name}</option>
+                ))}
+            </select>
+        </div>
 
-
-
-    );
+        {/* Renderiza el contenedor de tarjetas con los datos filtrados */}
+        <CardContainer data={
+            publicacionesFiltradas.map((pub, index) => ({
+                imageUrl: base64Images[index],
+                title: pub.titulo_post,
+                idPost: pub.id_post
+            }))
+        } />
+    </>
+);
 }
 
 export default Explore

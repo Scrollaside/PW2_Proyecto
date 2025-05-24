@@ -110,7 +110,7 @@ useEffect(() => {
         if (allImg.length > 0 && Array.isArray(allImg[0])) {
             const publicacionesPromises = allImg[0].map(async (pub) => {
                 try {
-                    const res = await axiosInstance.get(`http://localhost:3001/publicacion/${pub.id_post}`);
+                    const res = await axiosInstance.get(`/publicacion/${pub.id_post}`);
                     return {
                         ...pub,
                         categorias: res.data.categorias // array de strings

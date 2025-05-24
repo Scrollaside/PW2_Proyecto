@@ -87,7 +87,7 @@
 
 #titleP {
   margin-bottom: 50px;
-  color: #f1eefd;
+  color: #1e1446;
   text-align: center;
 }
 
@@ -117,9 +117,10 @@
 
 #contadorL{
   margin-top: 10px; margin-bottom: 180px;
-  margin-left: 20px;
+  
   font-size: 20px;
   font-weight: bold;
+  text-align: center;
 
 }
 
@@ -130,7 +131,7 @@
 }
 #likesContainer i,
 #comI i {
-  font-size: 40px;
+  font-size: 70px;
   color: pink;
 }
 #likesContainer i:hover,
@@ -240,6 +241,13 @@
   /* Espacio alrededor del contenido */
 }
 
+#catP h2{
+    color: #f1eefd;
+  background-color: #2b013b;
+  border-radius: 50px;
+  margin-bottom: 25px;
+}
+
 #catP p {
   margin: 5px;
   border-radius: 20px;
@@ -269,11 +277,18 @@
   
 }
 
-
+/*corregisoa*/
+#commsP h2{
+  color: #f1eefd;
+  background-color: #2b013b;
+  border-radius: 50px;
+  margin-bottom: 25px;
+}
+/*termina corregidos*/
 
 #recommContainer {
-  width: 500px;
-  height: 400px;
+  width: 380px;
+  height: 350px;
   overflow-y: auto;
   justify-content: center;
   /* Barra de desplazamiento vertical */
@@ -283,7 +298,7 @@
   border-radius: 20px;
   padding: 10px;
   /* Agrega un poco de espacio entre el contenido y el borde */
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 #rectP img {
@@ -303,8 +318,8 @@
 }
 
 #recentContainer {
-  width: 500px;
-  height: 300px;
+  width: 380px;
+  height: 350px;
   overflow-y: auto;
   /* Barra de desplazamiento vertical */
 

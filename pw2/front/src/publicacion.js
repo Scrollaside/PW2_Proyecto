@@ -92,6 +92,7 @@ function Publicacion() {
                         
 
                         <div id={styles.catP}>
+                            <h2>Categorías</h2>
                             {publicacion.categorias && publicacion.categorias.map((cat, index) => (
                                 <p key={index}>{cat}</p>
                             ))}

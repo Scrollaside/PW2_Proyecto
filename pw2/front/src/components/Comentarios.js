@@ -6,6 +6,7 @@ function Comentarios({ comentarios }) {
     return (
         <div id={styles.commentsContainer}>
             <div id={styles.commsP}>
+                <h2>Comentarios</h2>
                 {comentarios && comentarios.map((comment, index) => (
                     <div key={index} id={styles.comment}>
                         <img src={comment.pfp} alt="PFP" className={styles.pfp} />
